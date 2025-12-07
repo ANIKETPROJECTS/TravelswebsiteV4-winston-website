@@ -1735,187 +1735,119 @@ export default function Home() {
 
       {/* Why Choose Train With Winston Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 relative overflow-hidden border-t border-primary/10" id="why-choose">
-          {/* Decorative background elements */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-green-300/20 rounded-full blur-2xl" />
+        <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 relative overflow-hidden border-t border-primary/10" id="why-choose">
+          {/* Subtle decorative background */}
+          <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-emerald-200/20 rounded-full blur-3xl" />
           
-          <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
-            <div className="text-center mb-10 md:mb-12 lg:mb-16">
+          <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
+            {/* Header - Compact */}
+            <div className="text-center mb-6 md:mb-8">
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
-                initial={{ opacity: 0, y: 20 }}
+                className="font-heading text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 tracking-tight text-foreground"
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.5 }}
                 data-testid="heading-why-choose"
               >
-                Why Choose <span className="text-primary">Train With Winston</span>
+                The <span className="text-primary">Winston</span> Difference
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto font-semibold"
-                initial={{ opacity: 0, y: 20 }}
+                className="text-xs md:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto"
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 data-testid="text-why-choose-subtitle"
               >
-                Transformation Philosophy
+                Science-backed coaching that transforms lives, not just bodies
               </motion.p>
             </div>
 
-            <style>{`
-              .flip-card {
-                perspective: 1000px;
-                height: 100%;
-                min-height: 280px;
-              }
-              
-              .flip-card-inner {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                min-height: 280px;
-                text-align: center;
-                transition: transform 0.6s;
-                transform-style: preserve-3d;
-              }
-              
-              .flip-card:hover .flip-card-inner {
-                transform: rotateY(180deg);
-              }
-              
-              .flip-card-front, .flip-card-back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-              }
-              
-              .flip-card-back {
-                transform: rotateY(180deg);
-              }
-              
-              @keyframes float-icon {
-                0%, 100% {
-                  transform: translateY(0) rotate(0deg);
-                }
-                50% {
-                  transform: translateY(-10px) rotate(5deg);
-                }
-              }
-              
-              .floating-icon {
-                animation: float-icon 3s ease-in-out infinite;
-              }
-            `}</style>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {/* Compact 2-column grid layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
               {[
                 {
-                  title: "Structure, Not Guesswork",
-                  desc: "Science based personalized workout & diet according to your goals and lifestyle.",
+                  title: "Personalized Plans",
+                  desc: "Custom workout & diet based on your goals and lifestyle",
                   icon: Target,
                   testId: "card-structure",
-                  backImage: gymBackImage1,
-                  accent: "from-emerald-500 to-green-600"
                 },
                 {
-                  title: "High Accountability",
-                  desc: "Weekly check-ins, form correction, progress tracking. You don't fall off track.",
+                  title: "Weekly Check-ins",
+                  desc: "Form correction, progress tracking & accountability",
                   icon: CheckCircle2,
                   testId: "card-accountability",
-                  backImage: gymBackImage2,
-                  accent: "from-emerald-500 to-green-600"
                 },
                 {
-                  title: "Clear Guidance",
-                  desc: "No confusion. No overthinking. You'll know exactly what to do daily.",
+                  title: "Daily Clarity",
+                  desc: "No confusion - know exactly what to do every day",
                   icon: Lightbulb,
                   testId: "card-guidance",
-                  backImage: gymBackImage3,
-                  accent: "from-emerald-500 to-green-600"
                 },
                 {
-                  title: "Mindset & Discipline Coaching",
-                  desc: "You don't just get in shape. You become consistent.",
+                  title: "Mindset Coaching",
+                  desc: "Build lasting discipline, not just temporary results",
                   icon: Zap,
                   testId: "card-mindset",
-                  backImage: gymBackImage4,
-                  accent: "from-emerald-500 to-green-600"
                 },
                 {
-                  title: "Premium Community",
-                  desc: "A batch where everyone is moving.",
+                  title: "Active Community",
+                  desc: "Join a supportive batch moving towards their goals",
                   icon: Users,
                   testId: "card-community",
-                  backImage: gymBackImage5,
-                  accent: "from-emerald-500 to-green-600"
                 },
                 {
-                  title: "Progress Tracking",
-                  desc: "Real-time metrics and feedback to keep you motivated and on track.",
+                  title: "Real-time Tracking",
+                  desc: "Metrics & feedback to keep you motivated",
                   icon: TrendingUp,
                   testId: "card-progress",
-                  backImage: gymBackImage1,
-                  accent: "from-emerald-500 to-green-600"
                 },
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="h-full"
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="group"
+                  data-testid={item.testId}
                 >
-                  <div className="flip-card" data-testid={item.testId}>
-                    <div className="flip-card-inner">
-                      <div className="flip-card-front">
-                        <Card className="bg-card shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 h-full">
-                          <CardContent className="p-6 md:p-8 space-y-4">
-                            <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.accent} flex items-center justify-center shadow-lg`}>
-                              <item.icon className="h-7 w-7 text-white" />
-                            </div>
-                            <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground text-left" data-testid={`heading-${item.testId}`}>
-                              {item.title}
-                            </h3>
-                            <p className="text-muted-foreground text-sm md:text-base leading-relaxed text-left" data-testid={`text-${item.testId}`}>
-                              {item.desc}
-                            </p>
-                          </CardContent>
-                        </Card>
-                      </div>
-                      <div className="flip-card-back">
-                        <Card className="border-primary/40 h-full overflow-hidden shadow-xl">
-                          <div className="relative w-full h-full">
-                            <img 
-                              src={item.backImage} 
-                              alt="Gym fitness background" 
-                              className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40" />
-                            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 space-y-4">
-                              <div className={`w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gradient-to-br ${item.accent} flex items-center justify-center floating-icon shadow-xl`}>
-                                <item.icon className="h-8 w-8 md:h-10 md:w-10 text-white" />
-                              </div>
-                              <p className="text-white text-base md:text-lg font-bold text-center">
-                                {item.title}
-                              </p>
-                              <p className="text-white/80 text-sm text-center">
-                                Your transformation starts here
-                              </p>
-                            </div>
-                          </div>
-                        </Card>
-                      </div>
+                  <div className="flex items-start gap-3 p-3 md:p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-primary/10 hover:border-primary/30 hover:bg-white/90 transition-all duration-300 hover:shadow-md">
+                    <div className="w-10 h-10 md:w-11 md:h-11 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                      <item.icon className="h-5 w-5 md:h-5 md:w-5 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-heading text-sm md:text-base font-bold text-foreground mb-0.5" data-testid={`heading-${item.testId}`}>
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground text-xs md:text-sm leading-snug" data-testid={`text-${item.testId}`}>
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* Bottom CTA */}
+            <motion.div 
+              className="text-center mt-6 md:mt-8"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Button 
+                onClick={openWhatsApp}
+                className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold shadow-lg"
+                data-testid="button-why-choose-cta"
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Start Your Transformation
+              </Button>
+            </motion.div>
           </div>
         </section>
       </AnimatedSection>
