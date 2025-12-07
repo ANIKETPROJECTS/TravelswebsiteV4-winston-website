@@ -1841,10 +1841,9 @@ export default function Home() {
             >
               <Button 
                 onClick={openWhatsApp}
-                className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold shadow-lg"
+                className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold shadow-lg rounded-full px-8"
                 data-testid="button-why-choose-cta"
               >
-                <MessageCircle className="w-4 h-4 mr-2" />
                 Start Your Transformation
               </Button>
             </motion.div>
