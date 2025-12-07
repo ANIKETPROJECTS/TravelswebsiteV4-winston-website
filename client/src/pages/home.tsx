@@ -711,7 +711,7 @@ export default function Home() {
 
       {/* Pricing Packages - Redesigned */}
       <AnimatedSection variant="slideInLeft">
-        <section className="min-h-screen bg-primary/5 flex items-center justify-center relative overflow-hidden py-16 md:py-20 lg:py-24 border-t border-primary/10" id="pricing">
+        <section className="min-h-screen bg-primary/5 flex items-center justify-center relative overflow-hidden py-10 md:py-12 lg:py-16 border-t border-primary/10" id="pricing">
         <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-10 lg:mb-12">
             <motion.h2 
@@ -950,7 +950,7 @@ export default function Home() {
 
       {/* Transformation Gallery - Auto-scrolling Slider */}
       <AnimatedSection variant="slideInRight">
-        <section className="py-16 md:py-20 lg:py-24 bg-card relative overflow-hidden border-t border-primary/10" id="transformations">
+        <section className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10" id="transformations">
           <div className="w-full relative">
             <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
               <motion.h2 
@@ -1127,7 +1127,7 @@ export default function Home() {
 
       {/* About House of Champions */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-16 md:py-20 lg:py-24 bg-card relative overflow-hidden border-t border-primary/10" id="about">
+        <section className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10" id="about">
           <div className="w-full px-6 md:px-12 lg:px-16 relative mx-auto">
             <div className="text-center mb-10 md:mb-12">
               <motion.h2 
@@ -1288,7 +1288,7 @@ export default function Home() {
 
       {/* Instagram Videos Section */}
       <AnimatedSection variant="zoomRotate">
-        <section className="py-16 md:py-20 lg:py-24 bg-card relative overflow-hidden border-t border-primary/10" id="instagram-videos">
+        <section className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10" id="instagram-videos">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,200,83,0.05),transparent_70%)]" />
           <div className="w-full px-3 md:px-5 lg:px-6 relative">
             <div className="text-center mb-10">
@@ -1382,7 +1382,7 @@ export default function Home() {
 
       {/* Our Services - Redesigned */}
       <AnimatedSection variant="slideUp">
-        <section id="program" className="py-12 md:py-16 lg:py-20 bg-card relative overflow-hidden border-t border-primary/10" data-testid="section-training-programs">
+        <section id="program" className="py-8 md:py-10 lg:py-12 bg-card relative overflow-hidden border-t border-primary/10" data-testid="section-training-programs">
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <motion.h2 
@@ -1464,7 +1464,7 @@ export default function Home() {
 
       {/* Exclusively For Women - Elegant Black Design */}
       {/* <AnimatedSection variant="fadeIn">
-        <section className="py-16 md:py-20 lg:py-24 bg-card relative overflow-hidden">
+        <section className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden">
           <div className="w-full px-3 md:px-5 lg:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-6">
               <div className="inline-block mb-3">
@@ -1568,7 +1568,7 @@ export default function Home() {
 
       {/* Meet Trainers - Redesigned */}
       <AnimatedSection variant="scaleIn">
-        <section className="bg-card flex items-center justify-center relative overflow-hidden py-16 md:py-20 lg:py-24 border-t border-primary/10" id="trainers">
+        <section className="bg-card flex items-center justify-center relative overflow-hidden py-10 md:py-12 lg:py-16 border-t border-primary/10" id="trainers">
           <div className="w-full px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-10 lg:mb-12">
               <motion.h2 
@@ -1647,7 +1647,7 @@ export default function Home() {
 
       {/* Why Choose Train With Winston Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 relative overflow-hidden border-t border-primary/10" id="why-choose">
+        <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 relative overflow-hidden border-t border-primary/10" id="why-choose">
           {/* Decorative background elements */}
           <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
@@ -1834,7 +1834,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <AnimatedSection variant="slideUp">
-        <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 relative overflow-hidden border-t border-primary/10" id="faq">
+        <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 relative overflow-hidden border-t border-primary/10" id="faq">
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
@@ -1946,7 +1946,7 @@ export default function Home() {
 
       {/* Customer Testimonials Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-16 md:py-20 lg:py-24 bg-primary/5 relative overflow-hidden border-t border-primary/10" data-testid="section-testimonials">
+        <section className="py-10 md:py-12 lg:py-16 bg-primary/5 relative overflow-hidden border-t border-primary/10" data-testid="section-testimonials">
           <div className="max-w-full">
             <div className="text-center mb-12 md:mb-16 px-4">
               <motion.h2 
@@ -2023,7 +2023,7 @@ export default function Home() {
 
       {/* Contact Section - Light Green Background with Styled Cards */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 border-t border-primary/10 relative overflow-hidden" id="contact">
+        <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 border-t border-primary/10 relative overflow-hidden" id="contact">
           {/* Decorative background elements */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
@@ -2332,7 +2332,7 @@ export default function Home() {
 
       {/* Final CTA Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-16 md:py-20 lg:py-24 bg-primary relative overflow-hidden border-t border-primary/10" id="final-cta">
+        <section className="py-10 md:py-12 lg:py-16 bg-primary relative overflow-hidden border-t border-primary/10" id="final-cta">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
           <div className="container px-4 md:px-6 relative max-w-4xl mx-auto text-center">
             <motion.div
@@ -2382,7 +2382,7 @@ export default function Home() {
             <X className="h-5 w-5" />
           </button>
 
-          <div className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-primary/10 via-white to-primary/5 relative overflow-hidden">
+          <div className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-primary/10 via-white to-primary/5 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,200,83,0.08),transparent_70%)]" />
             <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
               <div className="text-center mb-12">
