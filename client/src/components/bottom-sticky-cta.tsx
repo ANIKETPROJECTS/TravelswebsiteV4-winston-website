@@ -50,8 +50,9 @@ export function BottomStickyCta({
                 {originalPrice}
               </span>
             </div>
-            <span className="text-xs font-bold text-red-500 uppercase tracking-wide" data-testid="text-limited-offer">
-              Limited Time Offer!
+            <span className="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-wide leading-tight" data-testid="text-limited-offer">
+              <span className="sm:hidden">{slogan}</span>
+              <span className="hidden sm:inline">1-Day Trial Offer!</span>
             </span>
           </div>
 
