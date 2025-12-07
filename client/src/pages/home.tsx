@@ -75,7 +75,7 @@ import cardioTrainingImage from "@assets/image_1762682663589.png";
 import strengthTrainingImage from "@assets/image_1762682353257.png";
 import flexibilityTrainingImage from "@assets/image_1762682466178.png";
 import gymLogo from "@assets/gym-logo.png";
-import hocLogo from "@assets/Untitled design (10)_1764395327038.png";
+import hocLogo from "@assets/Untitled_design_(17)_1765119530684.png";
 import ownerPhoto from "@assets/image_1762685263069.png";
 import gymPhoto1 from "@assets/image_1762685345191.png";
 import gymPhoto2 from "@assets/image_1762685364894.png";
