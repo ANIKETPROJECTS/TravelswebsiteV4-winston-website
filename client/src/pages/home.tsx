@@ -1484,7 +1484,7 @@ export default function Home() {
                 Our <span className="text-primary">Services</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto font-semibold"
+                className="text-sm md:text-base lg:text-lg text-foreground max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1669,7 +1669,7 @@ export default function Home() {
                 Meet Your <span className="text-primary">Trainers</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-muted-foreground mx-auto font-bold px-4 md:whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-foreground mx-auto font-bold px-4 md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1754,7 +1754,7 @@ export default function Home() {
                 The <span className="text-primary">Winston</span> Difference
               </motion.h2>
               <motion.p 
-                className="text-xs md:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto"
+                className="text-xs md:text-sm lg:text-base text-foreground max-w-xl mx-auto"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1867,10 +1867,10 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 data-testid="heading-faq"
               >
-                Got <span className="text-primary">Questions?</span>
+                Frequently Asked <span className="text-primary">Questions</span>
               </motion.h2>
               <motion.p 
-                className="text-xs md:text-sm lg:text-base text-muted-foreground max-w-lg mx-auto"
+                className="text-xs md:text-sm lg:text-base text-foreground max-w-lg mx-auto"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -2019,7 +2019,7 @@ export default function Home() {
                 What Our Members <span className="text-primary">Say</span>
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-muted-foreground mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
+                className="text-sm md:text-base lg:text-lg text-foreground mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -2092,7 +2092,7 @@ export default function Home() {
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground">
                 Get In <span className="text-primary">Touch</span>
               </h2>
-              <p className="text-sm md:text-base lg:text-lg text-muted-foreground mx-auto font-medium">
+              <p className="text-sm md:text-base lg:text-lg text-foreground mx-auto font-medium">
                 We'd love to hear from you. Reach out to us today!
               </p>
             </div>
