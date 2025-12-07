@@ -1566,9 +1566,6 @@ export default function Home() {
         </section>
       </AnimatedSection> */}
 
-      {/* Marketing Offer Pricing Section */}
-      <PricingSection />
-
       {/* Meet Trainers - Redesigned */}
       <AnimatedSection variant="scaleIn">
         <section className="bg-card flex items-center justify-center relative overflow-hidden py-8 md:py-10 lg:py-12 border-t border-primary/10" id="trainers">
