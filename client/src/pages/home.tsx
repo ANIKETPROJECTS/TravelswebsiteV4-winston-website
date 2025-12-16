@@ -1204,7 +1204,7 @@ export default function Home() {
       {/* Instagram Videos Section */}
       <AnimatedSection variant="zoomRotate">
         <section className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10" id="instagram-videos">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(102,172,66,0.05),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(102, 172, 66,0.05),transparent_70%)]" />
           <div className="w-full px-3 md:px-5 lg:px-6 relative">
             <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
               <motion.h2 
@@ -2442,7 +2442,7 @@ export default function Home() {
           </button>
 
           <div className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-primary/10 via-white to-primary/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(102,172,66,0.08),transparent_70%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(102, 172, 66,0.08),transparent_70%)]" />
             <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <motion.div
