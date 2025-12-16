@@ -73,35 +73,14 @@
   --card-padding-mobile: 1.25rem;
   --card-padding-desktop: 2rem;
 
-  /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
-
-  /* Fallback for older browsers */
-  --sidebar-primary-border: hsl(var(--sidebar-primary));
-  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --sidebar-accent-border: hsl(var(--sidebar-accent));
-  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --primary-border: hsl(var(--primary));
-  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --secondary-border: hsl(var(--secondary));
-  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --muted-border: hsl(var(--muted));
-  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --accent-border: hsl(var(--accent));
-  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
+  /* Border colors */
+  --sidebar-primary-border: rgb(var(--sidebar-primary));
+  --sidebar-accent-border: rgb(var(--sidebar-accent));
+  --primary-border: rgb(var(--primary));
+  --secondary-border: rgb(var(--secondary));
+  --muted-border: rgb(var(--muted));
+  --accent-border: rgb(var(--accent));
   --destructive-border: hsl(var(--destructive));
-  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
 .dark {
@@ -114,9 +93,9 @@
   --elevate-1: rgba(102, 172, 66, .10);
   --elevate-2: rgba(102, 172, 66, .20);
 
-  --background: 0 0% 5%;
+  --background: 5 5 5;
 
-  --foreground: 0 0% 95%;
+  --foreground: 95 95 95;
 
   --primary: 102 172 66;
   --primary-foreground: 5 5 5;

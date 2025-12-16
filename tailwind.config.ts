@@ -81,7 +81,15 @@ export default {
           busy: "rgb(239 68 68)",
           offline: "rgb(156 163 175)",
         },
-        brand: "#66ac42",
+        brand: {
+          50: "#f0f8e8",
+          100: "#e0f0d1",
+          200: "#c1e2a3",
+          400: "#89ca59",
+          500: "#66ac42",
+          600: "#5a9a39",
+          700: "#4e8830",
+        },
       },
       fontFamily: {
         sans: ["Inter", "var(--font-sans)"],
