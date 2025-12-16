@@ -101,7 +101,7 @@ import gymBackImage4 from "@assets/stock_images/dumbbells_fitness_gy_35149c86.jp
 import gymBackImage5 from "@assets/stock_images/dumbbells_fitness_gy_0d51d04b.jpg";
 
 const WHATSAPP_NUMBER = "918374627462";
-const PHONE_NUMBER = "+91 8374627462";
+const PHONE_NUMBER = "+91 89280 00407";
 const GOOGLE_REVIEWS_URL = "https://share.google/BOqrkzB7sb4X33Iy0";
 
 interface TestimonialMobileCarouselProps {
@@ -555,7 +555,7 @@ export default function Home() {
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Phone className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="font-medium">+91 8374627462</span>
+                    <span className="font-medium">+91 89280 00407</span>
                   </a>
                   
                   {/* Email */}
@@ -2764,7 +2764,7 @@ export default function Home() {
                     className="text-muted-foreground hover:text-primary transition-colors" 
                     data-testid="button-phone"
                   >
-                    +91 8374627462
+                    +91 89280 00407
                   </a>
                 </li>
                 <li className="flex items-start gap-2">

@@ -22,12 +22,12 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
 **Note**: User opted not to use SendGrid integration and will use Gmail SMTP with app passwords instead.
 
 ## WhatsApp Integration
-- WhatsApp number: +91 8374627462
+- WhatsApp number: +91 89280 00407
 - Opens WhatsApp with pre-filled message for consultations
 
 ## Contact Information
 - Email: hoc@gmail.com
-- Phone: +91 8374627462
+- Phone: +91 89280 00407
 - Location: Bengaluru, Karnataka
 
 ## Recent Changes
@@ -123,7 +123,7 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
 - **UI Updates** (November 27, 2025):
   - Removed dark mode toggle completely - website stays in white + green theme only
   - Added scroll-to-top button on bottom-left (white bg, green border/icon, rounded shape, hover effects)
-  - Updated contact details: Phone +91 8374627462, Email hoc@gmail.com
+  - Updated contact details: Phone +91 89280 00407, Email hoc@gmail.com
   - Fixed transformation images to show full body (object-contain instead of object-cover)
 - **Mobile Responsiveness & UI Fixes** (November 27, 2025):
   - Fixed Review/Testimonials section on mobile: white card background with proper text contrast

@@ -69,7 +69,7 @@ Replace this:
 abhijeet18012001@gmail.com
 
 With this:
-+91 8374627462
++91 89280 00407
 hoc@gmail.com
 
 Keep the same layout and design.
