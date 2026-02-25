@@ -8,23 +8,43 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useInView } from "@/hooks/use-in-view";
-import { fadeInUp, fadeIn, scaleIn, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
+import {
+  fadeInUp,
+  fadeIn,
+  scaleIn,
+  staggerContainer,
+  slideInLeft,
+  slideInRight,
+} from "@/lib/animations";
 import { AnimatedSection } from "@/components/animated-section";
 import { ArrowUp } from "lucide-react";
-import { 
-  Heart, 
-  Smile, 
-  Palette, 
-  Lightbulb, 
-  Dumbbell, 
-  Flame, 
-  Users, 
+import {
+  Heart,
+  Smile,
+  Palette,
+  Lightbulb,
+  Dumbbell,
+  Flame,
+  Users,
   Zap,
   Activity,
   Target,
@@ -47,10 +67,17 @@ import {
   Menu,
   X,
   Video,
-  Clock
+  Clock,
 } from "lucide-react";
 import { SiWhatsapp, SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import transformationImage from "@assets/stock_images/before_and_after_wei_c6f6006f.jpg";
 import workoutVideo from "@assets/5319089-uhd_3840_2160_25fps_1762541494599.mp4";
 import heroVideo from "@assets/4325592-uhd_4096_2160_25fps_1762544359197.mp4";
@@ -100,15 +127,17 @@ import gymBackImage3 from "@assets/stock_images/dumbbells_fitness_gy_1561c2c3.jp
 import gymBackImage4 from "@assets/stock_images/dumbbells_fitness_gy_35149c86.jpg";
 import gymBackImage5 from "@assets/stock_images/dumbbells_fitness_gy_0d51d04b.jpg";
 
-const WHATSAPP_NUMBER = "918374627462";
-const PHONE_NUMBER = "+91 89280 00407";
+const WHATSAPP_NUMBER = "918898918475";
+const PHONE_NUMBER = "+91 8898918475";
 const GOOGLE_REVIEWS_URL = "https://share.google/BOqrkzB7sb4X33Iy0";
 
 interface TestimonialMobileCarouselProps {
   testimonials: typeof testimonials;
 }
 
-function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselProps) {
+function TestimonialMobileCarousel({
+  testimonials,
+}: TestimonialMobileCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -122,7 +151,7 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
   return (
     <div className="relative">
       <div className="overflow-hidden rounded-xl">
-        <div 
+        <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
@@ -150,7 +179,10 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
                   </p>
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-primary text-primary"
+                      />
                     ))}
                   </div>
                 </CardContent>
@@ -159,7 +191,7 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
           ))}
         </div>
       </div>
-      
+
       {/* Dots Indicator - More visible on mobile */}
       <div className="flex justify-center items-center gap-2 mt-6">
         {testimonials.map((_, index) => (
@@ -167,9 +199,9 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`rounded-full transition-all duration-300 ${
-              index === currentIndex 
-                ? 'w-8 h-3 bg-primary' 
-                : 'w-3 h-3 bg-primary/30 hover:bg-primary/50'
+              index === currentIndex
+                ? "w-8 h-3 bg-primary"
+                : "w-3 h-3 bg-primary/30 hover:bg-primary/50"
             }`}
             aria-label={`Go to testimonial ${index + 1}`}
             data-testid={`button-testimonial-dot-${index}`}
@@ -181,8 +213,23 @@ function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselPr
 }
 
 // Hero Transformation Slider - Full images with crossfade, no background
-function HeroTransformationSlider({ showDots = true, imageHeight = "h-[280px] sm:h-[320px] lg:h-[300px]" }: { showDots?: boolean; imageHeight?: string }) {
-  const transformImages = [transform1, transform2, transform3, transform4, transform5, transform6, transform7, transform8];
+function HeroTransformationSlider({
+  showDots = true,
+  imageHeight = "h-[280px] sm:h-[320px] lg:h-[300px]",
+}: {
+  showDots?: boolean;
+  imageHeight?: string;
+}) {
+  const transformImages = [
+    transform1,
+    transform2,
+    transform3,
+    transform4,
+    transform5,
+    transform6,
+    transform7,
+    transform8,
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -193,17 +240,17 @@ function HeroTransformationSlider({ showDots = true, imageHeight = "h-[280px] sm
   }, [transformImages.length]);
 
   return (
-    <div 
+    <div
       className={`relative ${imageHeight} rounded-xl overflow-hidden`}
       data-testid="hero-transformation-carousel"
     >
       {transformImages.map((img, index) => (
-        <img 
+        <img
           key={index}
-          src={img} 
+          src={img}
           alt={`Transformation ${index + 1}`}
           className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
+            index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         />
       ))}
@@ -214,9 +261,9 @@ function HeroTransformationSlider({ showDots = true, imageHeight = "h-[280px] sm
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'w-6 h-2 bg-primary' 
-                  : 'w-2 h-2 bg-white/50 hover:bg-white/70'
+                index === currentIndex
+                  ? "w-6 h-2 bg-primary"
+                  : "w-2 h-2 bg-white/50 hover:bg-white/70"
               }`}
               aria-label={`View transformation ${index + 1}`}
               data-testid={`button-transform-dot-${index}`}
@@ -229,7 +276,15 @@ function HeroTransformationSlider({ showDots = true, imageHeight = "h-[280px] sm
 }
 
 // Hero Testimonial Slider - Full display with crossfade
-function HeroTestimonialSlider({ testimonials, showDots = true, compact = false }: { testimonials: typeof import("@/data/testimonials").testimonials; showDots?: boolean; compact?: boolean }) {
+function HeroTestimonialSlider({
+  testimonials,
+  showDots = true,
+  compact = false,
+}: {
+  testimonials: typeof import("@/data/testimonials").testimonials;
+  showDots?: boolean;
+  compact?: boolean;
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -245,30 +300,51 @@ function HeroTestimonialSlider({ testimonials, showDots = true, compact = false 
         <div
           key={index}
           className={`transition-opacity duration-700 ${
-            index === currentIndex ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'
+            index === currentIndex
+              ? "opacity-100 relative"
+              : "opacity-0 absolute inset-0"
           }`}
         >
-          <div 
-            className={`bg-white rounded-xl shadow-lg border border-primary/20 ${compact ? 'p-3 sm:p-4' : 'p-4 sm:p-5'}`}
+          <div
+            className={`bg-white rounded-xl shadow-lg border border-primary/20 ${compact ? "p-3 sm:p-4" : "p-4 sm:p-5"}`}
             data-testid={`hero-testimonial-card-${index}`}
           >
             <div className="flex items-start gap-2 sm:gap-3">
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
-                className={`rounded-full object-cover border-2 border-primary flex-shrink-0 ${compact ? 'w-10 h-10 sm:w-12 sm:h-12' : 'w-12 h-12 sm:w-14 sm:h-14'}`}
+                className={`rounded-full object-cover border-2 border-primary flex-shrink-0 ${compact ? "w-10 h-10 sm:w-12 sm:h-12" : "w-12 h-12 sm:w-14 sm:h-14"}`}
               />
               <div className="flex-1 min-w-0">
-                <h4 className={`font-bold text-foreground ${compact ? 'text-xs sm:text-sm' : 'text-sm sm:text-base'}`} data-testid="text-testimonial-name">{testimonial.name}</h4>
-                <p className={`text-primary font-semibold ${compact ? 'text-[10px] sm:text-xs' : 'text-xs sm:text-sm'}`} data-testid="text-testimonial-role">{testimonial.role}</p>
+                <h4
+                  className={`font-bold text-foreground ${compact ? "text-xs sm:text-sm" : "text-sm sm:text-base"}`}
+                  data-testid="text-testimonial-name"
+                >
+                  {testimonial.name}
+                </h4>
+                <p
+                  className={`text-primary font-semibold ${compact ? "text-[10px] sm:text-xs" : "text-xs sm:text-sm"}`}
+                  data-testid="text-testimonial-role"
+                >
+                  {testimonial.role}
+                </p>
               </div>
             </div>
-            <p className={`text-muted-foreground leading-relaxed line-clamp-2 ${compact ? 'text-[11px] sm:text-xs mt-2' : 'text-xs sm:text-sm mt-3 sm:mt-4'}`} data-testid="text-testimonial-review">
+            <p
+              className={`text-muted-foreground leading-relaxed line-clamp-2 ${compact ? "text-[11px] sm:text-xs mt-2" : "text-xs sm:text-sm mt-3 sm:mt-4"}`}
+              data-testid="text-testimonial-review"
+            >
               "{testimonial.review}"
             </p>
-            <div className={`flex items-center gap-0.5 ${compact ? 'mt-1.5' : 'mt-2 sm:mt-3'}`} data-testid="stars-testimonial-rating">
+            <div
+              className={`flex items-center gap-0.5 ${compact ? "mt-1.5" : "mt-2 sm:mt-3"}`}
+              data-testid="stars-testimonial-rating"
+            >
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className={`fill-primary text-primary ${compact ? 'h-3 w-3' : 'h-3 w-3 sm:h-4 sm:w-4'}`} />
+                <Star
+                  key={i}
+                  className={`fill-primary text-primary ${compact ? "h-3 w-3" : "h-3 w-3 sm:h-4 sm:w-4"}`}
+                />
               ))}
             </div>
           </div>
@@ -282,8 +358,8 @@ function HeroTestimonialSlider({ testimonials, showDots = true, compact = false 
               onClick={() => setCurrentIndex(dotIndex)}
               className={`rounded-full transition-all duration-300 ${
                 currentIndex === dotIndex
-                  ? 'w-6 h-2 bg-primary' 
-                  : 'w-2 h-2 bg-white/50 hover:bg-white/70'
+                  ? "w-6 h-2 bg-primary"
+                  : "w-2 h-2 bg-white/50 hover:bg-white/70"
               }`}
               aria-label={`View testimonial ${dotIndex + 1}`}
               data-testid={`button-hero-testimonial-dot-${dotIndex}`}
@@ -318,7 +394,7 @@ function useCountUp(target: number, isInView: boolean, duration = 2000) {
 
       const elapsed = currentTime - startTimeRef.current;
       const progress = Math.min(elapsed / duration, 1);
-      
+
       // Ease-out function for smooth animation
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const currentCount = Math.floor(easeOut * target);
@@ -343,7 +419,17 @@ function useCountUp(target: number, isInView: boolean, duration = 2000) {
 }
 
 // StatCard component - Responsive layout
-function StatCard({ value, label, suffix, index }: { value: number; label: string; suffix: string; index: number }) {
+function StatCard({
+  value,
+  label,
+  suffix,
+  index,
+}: {
+  value: number;
+  label: string;
+  suffix: string;
+  index: number;
+}) {
   const { ref, isInView } = useInView({ threshold: 0.3 });
   const count = useCountUp(value, isInView);
 
@@ -356,10 +442,16 @@ function StatCard({ value, label, suffix, index }: { value: number; label: strin
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="text-center p-2 sm:p-3 md:p-4 lg:p-6 flex-1 min-w-0"
     >
-      <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1" data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
-        {count.toLocaleString()}{suffix}
+      <div
+        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1"
+        data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, "-")}`}
+      >
+        {count.toLocaleString()}
+        {suffix}
       </div>
-      <div className="text-[10px] sm:text-xs md:text-sm text-foreground font-medium leading-tight">{label}</div>
+      <div className="text-[10px] sm:text-xs md:text-sm text-foreground font-medium leading-tight">
+        {label}
+      </div>
     </motion.div>
   );
 }
@@ -380,9 +472,9 @@ export default function Home() {
       const scrollThreshold = window.innerHeight * 2;
       setShowScrollTop(window.scrollY > scrollThreshold);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const form = useForm<ContactFormData>({
@@ -403,7 +495,9 @@ export default function Home() {
     onSuccess: (data: any) => {
       toast({
         title: "Thank you!",
-        description: data.message || "We'll contact you shortly to discuss your fitness journey.",
+        description:
+          data.message ||
+          "We'll contact you shortly to discuss your fitness journey.",
       });
       form.reset();
     },
@@ -421,7 +515,10 @@ export default function Home() {
   };
 
   const openWhatsApp = () => {
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Hi!%20I%20want%20to%20book%20a%20free%20consultation%20for%20your%20fitness%20program.`, "_blank");
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=Hi!%20I%20want%20to%20book%20a%20free%20consultation%20for%20your%20fitness%20program.`,
+      "_blank",
+    );
   };
 
   return (
@@ -430,69 +527,82 @@ export default function Home() {
       <header className="fixed top-0 z-50 w-full border-b border-primary/10 bg-white">
         <div className="absolute inset-0 pointer-events-none" />
         <div className="w-full max-w-[1920px] mx-auto flex h-20 items-center gap-4 px-4 md:px-8 lg:px-12 xl:px-16 relative">
-          <motion.div 
+          <motion.div
             className="flex items-center flex-shrink-0 mr-auto"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
             <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="focus:outline-none"
               aria-label="Scroll to top"
               data-testid="button-logo-home"
             >
-              <img 
-                src={hocLogo} 
-                alt="HOC Fitness" 
-                className="h-48 w-auto transition-transform duration-300 hover:scale-105 cursor-pointer" 
+              <img
+                src={hocLogo}
+                alt="HOC Fitness"
+                className="h-48 w-auto transition-transform duration-300 hover:scale-105 cursor-pointer"
               />
             </button>
           </motion.div>
-          
+
           {/* Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <button className="p-1 focus:outline-none" data-testid="button-mobile-menu-trigger">
+              <button
+                className="p-1 focus:outline-none"
+                data-testid="button-mobile-menu-trigger"
+              >
                 <Menu className="h-8 w-8 text-foreground" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[320px] bg-background border-l border-primary/20 p-0 overflow-y-auto">
+            <SheetContent
+              side="right"
+              className="w-[320px] bg-background border-l border-primary/20 p-0 overflow-y-auto"
+            >
               <div className="flex flex-col h-full">
                 {/* Logo Header */}
                 <div className="flex items-center justify-center pt-2 pb-3 px-4 border-b border-primary/10">
-                  <img 
-                    src={hocLogo} 
-                    alt="Train With Winston" 
+                  <img
+                    src={hocLogo}
+                    alt="Train With Winston"
                     className="h-20 w-auto"
                     data-testid="img-mobile-menu-logo"
                   />
                 </div>
-                
+
                 {/* Navigation Links */}
                 <nav className="flex flex-col gap-1 py-4 px-4 border-b border-primary/10">
                   {[
-                    { id: 'about', label: 'ABOUT US' },
-                    { id: 'instagram-videos', label: 'COMMUNITY' },
-                    { id: 'transformations', label: 'TRANSFORMATIONS' },
-                    { id: 'program', label: 'SERVICES' },
-                    { id: 'pricing', label: 'PACKAGES' },
-                    { id: 'trainers', label: 'TRAINERS' },
-                    { selector: '[data-testid="section-testimonials"]', label: 'TESTIMONIALS' },
-                    { id: 'contact', label: 'CONTACT' }
+                    { id: "about", label: "ABOUT US" },
+                    { id: "instagram-videos", label: "COMMUNITY" },
+                    { id: "transformations", label: "TRANSFORMATIONS" },
+                    { id: "program", label: "SERVICES" },
+                    { id: "pricing", label: "PACKAGES" },
+                    { id: "trainers", label: "TRAINERS" },
+                    {
+                      selector: '[data-testid="section-testimonials"]',
+                      label: "TESTIMONIALS",
+                    },
+                    { id: "contact", label: "CONTACT" },
                   ].map((item, idx) => (
-                    <button 
+                    <button
                       key={idx}
-                      onClick={() => { 
+                      onClick={() => {
                         if (item.id) {
-                          document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+                          document
+                            .getElementById(item.id)
+                            ?.scrollIntoView({ behavior: "smooth" });
                         } else if (item.selector) {
-                          document.querySelector(item.selector)?.scrollIntoView({ behavior: 'smooth' });
+                          document
+                            .querySelector(item.selector)
+                            ?.scrollIntoView({ behavior: "smooth" });
                         }
-                        setMobileMenuOpen(false); 
+                        setMobileMenuOpen(false);
                       }}
                       className="text-base font-semibold text-foreground hover:text-primary hover:bg-primary/5 transition-all text-left py-2.5 px-3 rounded-md"
-                      data-testid={`button-mobile-nav-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                      data-testid={`button-mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                     >
                       {item.label}
                     </button>
@@ -501,36 +611,38 @@ export default function Home() {
 
                 {/* Social Media Links - Footer Style */}
                 <div className="py-4 px-4 border-b border-primary/10">
-                  <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">Follow Us</h4>
+                  <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
+                    Follow Us
+                  </h4>
                   <div className="flex items-center gap-3">
-                    <a 
-                      href="https://www.facebook.com/house_of_champions_studio/" 
-                      target="_blank" 
+                    <a
+                      href="https://www.facebook.com/house_of_champions_studio/"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#1877F2] hover:scale-110 transition-transform"
                       data-testid="link-mobile-facebook"
                     >
                       <SiFacebook className="w-6 h-6 text-white" />
                     </a>
-                    <a 
-                      href="https://www.instagram.com/house_of_champions_studio/" 
-                      target="_blank" 
+                    <a
+                      href="https://www.instagram.com/house_of_champions_studio/"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F77737] hover:scale-110 transition-transform"
                       data-testid="link-mobile-instagram"
                     >
                       <SiInstagram className="w-6 h-6 text-white" />
                     </a>
-                    <a 
-                      href="https://www.youtube.com/@houseofchampionsstudio" 
-                      target="_blank" 
+                    <a
+                      href="https://www.youtube.com/@houseofchampionsstudio"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FF0000] hover:scale-110 transition-transform"
                       data-testid="link-mobile-youtube"
                     >
                       <SiYoutube className="w-6 h-6 text-white" />
                     </a>
-                    <a 
+                    <a
                       href="https://wa.me/918374627462?text=Hi%20Coach%20Winston!%20I%27m%20interested%20in%20your%20fitness%20coaching%20program."
                       target="_blank"
                       rel="noopener noreferrer"
@@ -544,11 +656,13 @@ export default function Home() {
 
                 {/* Contact Information */}
                 <div className="py-4 px-4 border-b border-primary/10 space-y-3">
-                  <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">Contact Us</h4>
-                  
+                  <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
+                    Contact Us
+                  </h4>
+
                   {/* Phone */}
-                  <a 
-                    href="tel:+918374627462" 
+                  <a
+                    href="tel:+918374627462"
                     className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors group"
                     data-testid="link-mobile-phone"
                   >
@@ -557,35 +671,41 @@ export default function Home() {
                     </div>
                     <span className="font-medium">+91 89280 00407</span>
                   </a>
-                  
+
                   {/* Email */}
-                  <a 
-                    href="mailto:trainwithwinston@gmail.com" 
+                  <a
+                    href="mailto:trainwithwinston@gmail.com"
                     className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors group"
                     data-testid="link-mobile-email"
                   >
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Mail className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="font-medium">trainwithwinston@gmail.com</span>
+                    <span className="font-medium">
+                      trainwithwinston@gmail.com
+                    </span>
                   </a>
-                  
+
                   {/* Address */}
                   <div className="flex items-start gap-3 text-sm text-foreground">
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="font-medium leading-relaxed">House of Champions Studio, Kalyan, India</span>
+                    <span className="font-medium leading-relaxed">
+                      House of Champions Studio, Kalyan, India
+                    </span>
                   </div>
                 </div>
 
                 {/* CTA Button */}
                 <div className="py-4 px-4 mt-auto">
                   {/* Consult Now Button */}
-                  <Button 
-                    onClick={() => { 
-                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); 
-                      setMobileMenuOpen(false); 
+                  <Button
+                    onClick={() => {
+                      document
+                        .getElementById("contact")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                      setMobileMenuOpen(false);
                     }}
                     className="w-full py-3 font-bold text-base"
                     data-testid="button-mobile-consult-now"
@@ -596,37 +716,53 @@ export default function Home() {
               </div>
             </SheetContent>
           </Sheet>
-          
+
           {/* Desktop Navigation Menu */}
-          <motion.nav 
+          <motion.nav
             className="hidden lg:flex items-center gap-1 flex-1 justify-center"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <button 
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="relative px-4 py-2 text-sm font-extrabold text-foreground hover:text-primary transition-all duration-300 group whitespace-nowrap"
             >
               <span className="relative z-10">ABOUT US</span>
               <div className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300" />
             </button>
-            <button 
-              onClick={() => document.getElementById('instagram-videos')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("instagram-videos")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="relative px-4 py-2 text-sm font-extrabold text-foreground hover:text-primary transition-all duration-300 group whitespace-nowrap"
             >
               <span className="relative z-10">COMMUNITY</span>
               <div className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300" />
             </button>
-            <button 
-              onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("transformations")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="relative px-4 py-2 text-sm font-extrabold text-foreground hover:text-primary transition-all duration-300 group whitespace-nowrap"
             >
               <span className="relative z-10">TRANSFORMATIONS</span>
               <div className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300" />
             </button>
-            <button 
-              onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("program")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="relative px-4 py-2 text-sm font-extrabold text-foreground hover:text-primary transition-all duration-300 group whitespace-nowrap"
             >
               <span className="relative z-10">SERVICES</span>
@@ -639,46 +775,62 @@ export default function Home() {
               <span className="relative z-10 text-pink-500">WOMENS PROGRAM</span>
               <div className="absolute bottom-0 left-0 h-0.5 bg-pink-500 w-0 group-hover:w-full transition-all duration-300" />
             </button> */}
-            <button 
-              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("pricing")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="relative px-4 py-2 text-sm font-extrabold text-foreground hover:text-primary transition-all duration-300 group whitespace-nowrap"
             >
               <span className="relative z-10">PACKAGES</span>
               <div className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300" />
             </button>
-            <button 
-              onClick={() => document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("trainers")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="relative px-4 py-2 text-sm font-extrabold text-foreground hover:text-primary transition-all duration-300 group whitespace-nowrap"
             >
               <span className="relative z-10">TRAINERS</span>
               <div className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300" />
             </button>
-            <button 
-              onClick={() => document.querySelector('[data-testid="section-testimonials"]')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .querySelector('[data-testid="section-testimonials"]')
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="relative px-4 py-2 text-sm font-extrabold text-foreground hover:text-primary transition-all duration-300 group whitespace-nowrap"
             >
               <span className="relative z-10">TESTIMONIALS</span>
               <div className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300" />
             </button>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="relative px-4 py-2 text-sm font-extrabold text-foreground hover:text-primary transition-all duration-300 group whitespace-nowrap"
             >
               <span className="relative z-10">CONTACT</span>
               <div className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300" />
             </button>
           </motion.nav>
-          
-          <motion.div 
+
+          <motion.div
             className="hidden lg:flex items-center gap-3 pr-12"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Button 
-              onClick={openWhatsApp} 
-              size="default" 
-              className="rounded-full px-6 transition-all duration-300" 
+            <Button
+              onClick={openWhatsApp}
+              size="default"
+              className="rounded-full px-6 transition-all duration-300"
               data-testid="button-book-call-header"
             >
               <span>Consult Now</span>
@@ -691,10 +843,10 @@ export default function Home() {
       <section className="relative w-full min-h-[calc(100vh-5rem)] flex items-center overflow-hidden mt-20">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full bg-neutral-900">
-          <video 
-            autoPlay 
-            loop 
-            muted 
+          <video
+            autoPlay
+            loop
+            muted
             playsInline
             preload="auto"
             src={heroNewVideo}
@@ -703,13 +855,12 @@ export default function Home() {
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50"></div>
         </div>
-        
+
         {/* Content - Two Column Layout */}
         <div className="container relative z-10 px-4 md:px-6 lg:px-12 xl:px-16 py-8 md:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 lg:gap-12 xl:gap-20 items-center w-full max-w-[1400px] mx-auto">
-            
             {/* Left Column - Text Content */}
-            <motion.div 
+            <motion.div
               className="space-y-5 md:space-y-6 text-center lg:text-left"
               initial="hidden"
               animate="visible"
@@ -718,34 +869,44 @@ export default function Home() {
               {/* Main Headline */}
               <motion.h1
                 className="font-heading font-extrabold leading-[1.1] tracking-tight text-white"
-                style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
+                style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
                 variants={fadeInUp}
                 data-testid="hero-headline"
               >
-                <span className="lg:whitespace-nowrap">Transform Your Life With</span>
+                <span className="lg:whitespace-nowrap">
+                  Transform Your Life With
+                </span>
                 <span className="block text-primary mt-1 lg:whitespace-nowrap">
                   Expert Online Coaching
                 </span>
               </motion.h1>
-              
+
               {/* Subline */}
-              <motion.p 
-                className="text-white/90 leading-relaxed font-medium max-w-lg mx-auto lg:mx-0" 
-                style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}
+              <motion.p
+                className="text-white/90 leading-relaxed font-medium max-w-lg mx-auto lg:mx-0"
+                style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)" }}
                 variants={fadeInUp}
                 data-testid="hero-subline"
               >
-                Personalized workouts, guidance & accountability built for your lifestyle.
+                Personalized workouts, guidance & accountability built for your
+                lifestyle.
               </motion.p>
 
               {/* CTAs - Always row layout */}
-              <motion.div 
+              <motion.div
                 className="flex flex-row gap-2 sm:gap-3 lg:gap-4 items-center justify-center lg:justify-start pt-2 flex-wrap"
                 variants={fadeInUp}
               >
-                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                  <Button 
-                    onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} 
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button
+                    onClick={() =>
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                     size="sm"
                     className="rounded-full px-4 sm:px-6 lg:px-8 lg:py-6 transition-all bg-primary hover:bg-primary/90 font-semibold text-xs sm:text-sm lg:text-base text-white shadow-xl shadow-primary/30"
                     data-testid="button-start-journey"
@@ -753,9 +914,12 @@ export default function Home() {
                     Start Your Journey
                   </Button>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                  <Button 
-                    variant="outline" 
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button
+                    variant="outline"
                     size="sm"
                     className="rounded-full px-4 sm:px-6 lg:px-8 lg:py-6 border-2 border-white/80 bg-white/10 hover:bg-white/20 backdrop-blur-md hover:border-white transition-all font-semibold text-xs sm:text-sm lg:text-base text-white shadow-xl"
                     onClick={openWhatsApp}
@@ -768,7 +932,7 @@ export default function Home() {
             </motion.div>
 
             {/* Right Column - Images and Reviews */}
-            <motion.div 
+            <motion.div
               className="space-y-3 hero-visuals lg:w-[380px] xl:w-[420px]"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -776,10 +940,17 @@ export default function Home() {
               data-testid="hero-visuals-container"
             >
               {/* Transformation Images - Larger size */}
-              <HeroTransformationSlider showDots={false} imageHeight="h-[320px] sm:h-[380px] lg:h-[340px] xl:h-[380px]" />
+              <HeroTransformationSlider
+                showDots={false}
+                imageHeight="h-[320px] sm:h-[380px] lg:h-[340px] xl:h-[380px]"
+              />
 
               {/* Reviews below images - Compact */}
-              <HeroTestimonialSlider testimonials={testimonials} showDots={false} compact={true} />
+              <HeroTestimonialSlider
+                testimonials={testimonials}
+                showDots={false}
+                compact={true}
+              />
             </motion.div>
           </div>
         </div>
@@ -787,249 +958,285 @@ export default function Home() {
 
       {/* Pricing Packages - Redesigned */}
       <AnimatedSection variant="slideInLeft">
-        <section className="min-h-screen bg-primary/5 flex items-center justify-center relative overflow-hidden py-10 md:py-12 lg:py-16 border-t border-primary/10" id="pricing">
-        <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
-          <div className="text-center mb-8 md:mb-10 lg:mb-12">
-            <motion.h2 
-              className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              Transform Your Life <span className="text-primary">Today</span>
-            </motion.h2>
-            <motion.p 
-              className="text-sm md:text-base lg:text-lg text-black dark:text-white mx-auto font-bold px-4 md:whitespace-nowrap"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              Choose the perfect plan that fits your lifestyle and commit to your wellness journey
-            </motion.p>
-          </div>
-          <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-[1200px] mx-auto">
-            {[
-              {
-                name: "Fit Basic",
-                price: "₹2,500",
-                description: "Perfect for getting started with your fitness journey",
-                features: [
-                  "Live Group Training",
-                  "Personalized Diet",
-                  "Weekly 1 Check-in",
-                  "WhatsApp Support"
-                ],
-                buttonText: "Start Fit Basic",
-                gradient: "from-brand-500/10 to-brand-400/10"
-              },
-              {
-                name: "Pro Transformation",
-                price: "₹5,000",
-                description: "Most comprehensive program for real results",
-                features: [
-                  "Live Group Training",
-                  "Personalized Diet",
-                  "Weekly 2 Check-ins",
-                  "WhatsApp Support",
-                  "WhatsApp Community"
-                ],
-                featured: true,
-                badge: "Popular",
-                buttonText: "Start Pro Plan",
-                gradient: "from-primary/20 to-brand-500/20"
-              },
-              {
-                name: "Elite Athlete",
-                price: "₹10,000",
-                description: "Premium 1:1 coaching for maximum results",
-                features: [
-                  "1:1 Personal Training",
-                  "Personalized Diet",
-                  "Weekly 2 Check-ins",
-                  "WhatsApp Support",
-                  "WhatsApp Community"
-                ],
-                buttonText: "Start Elite Plan",
-                gradient: "from-amber-500/10 to-orange-500/10"
-              },
-            ].map((pkg, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`flex ${pkg.featured ? 'md:-mt-4 md:mb-4' : ''}`}
-              >
-                <Card className={`group flex flex-col w-full transition-all duration-500 bg-gradient-to-br ${pkg.gradient} backdrop-blur-sm border-2 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/30 scale-[1.02]' : 'border-primary/30 hover:border-primary/60'} hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 relative overflow-visible rounded-2xl`}>
-                  {pkg.featured && (
-                    <>
-                      <div className="absolute -right-6 -top-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
-                      <div className="absolute -left-6 -bottom-6 w-32 h-32 bg-brand-500/10 rounded-full blur-3xl" />
-                    </>
-                  )}
-                  {pkg.badge && (
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-brand-600 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/40">
-                        <Star className="h-4 w-4 fill-white" />
-                        {pkg.badge}
-                      </div>
-                    </div>
-                  )}
-                  <CardContent className={`p-6 lg:p-8 space-y-5 relative flex flex-col h-full ${pkg.featured ? 'pt-10' : ''}`}>
-                    <div className="text-center">
-                      <h3 className="font-heading text-2xl lg:text-3xl font-extrabold mb-2 text-foreground">
-                        {pkg.name}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">{pkg.description}</p>
-                    </div>
-                    <div className="text-center py-4">
-                      <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">
-                        {pkg.price}
-                      </div>
-                      <span className="text-sm text-muted-foreground font-medium">per month</span>
-                    </div>
-                    <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-                    <ul className="grid grid-cols-1 gap-4 flex-1 py-2">
-                      {pkg.features.map((feature, j) => (
-                        <li key={j} className="flex items-center gap-3 group/item">
-                          <div className={`h-6 w-6 rounded-full ${pkg.featured ? 'bg-primary' : 'bg-primary/80'} flex items-center justify-center flex-shrink-0 shadow-md`}>
-                            <Check className="h-3.5 w-3.5 text-white" />
-                          </div>
-                          <span className="text-sm lg:text-base text-foreground font-medium">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button 
-                      onClick={openWhatsApp} 
-                      className={`w-full rounded-full py-6 text-base font-bold transition-all duration-300 ${pkg.featured ? 'bg-primary hover:bg-primary/90 shadow-lg shadow-primary/40' : 'bg-primary/90 hover:bg-primary'} text-white mt-auto`}
-                      data-testid={`button-select-${pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      {pkg.buttonText}
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-          
-          {/* Mobile View - Stacked Cards */}
-          <div className="md:hidden space-y-6">
-            {[
-              {
-                name: "Fit Basic",
-                price: "₹2,500",
-                description: "Perfect for getting started with your fitness journey",
-                features: [
-                  "Live Group Training",
-                  "Personalized Diet",
-                  "Weekly 1 Check-in",
-                  "WhatsApp Support"
-                ],
-                buttonText: "Start Fit Basic",
-                gradient: "from-brand-500/10 to-brand-400/10"
-              },
-              {
-                name: "Pro Transformation",
-                price: "₹5,000",
-                description: "Most comprehensive program for real results",
-                features: [
-                  "Live Group Training",
-                  "Personalized Diet",
-                  "Weekly 2 Check-ins",
-                  "WhatsApp Support",
-                  "WhatsApp Community"
-                ],
-                featured: true,
-                badge: "Popular",
-                buttonText: "Start Pro Plan",
-                gradient: "from-primary/20 to-brand-500/20"
-              },
-              {
-                name: "Elite Athlete",
-                price: "₹10,000",
-                description: "Premium 1:1 coaching for maximum results",
-                features: [
-                  "1:1 Personal Training",
-                  "Personalized Diet",
-                  "Weekly 2 Check-ins",
-                  "WhatsApp Support",
-                  "WhatsApp Community"
-                ],
-                buttonText: "Start Elite Plan",
-                gradient: "from-amber-500/10 to-orange-500/10"
-              },
-            ].map((pkg, i) => (
-              <motion.div
-                key={i}
+        <section
+          className="min-h-screen bg-primary/5 flex items-center justify-center relative overflow-hidden py-10 md:py-12 lg:py-16 border-t border-primary/10"
+          id="pricing"
+        >
+          <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
+            <div className="text-center mb-8 md:mb-10 lg:mb-12">
+              <motion.h2
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.6 }}
               >
-                <Card className={`group transition-all duration-500 bg-gradient-to-br ${pkg.gradient} backdrop-blur-sm border-2 ${pkg.featured ? 'border-primary shadow-2xl shadow-primary/30' : 'border-primary/30'} relative overflow-visible rounded-2xl`}>
-                  {pkg.featured && (
-                    <>
-                      <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
-                      <div className="absolute -left-4 -bottom-4 w-24 h-24 bg-brand-500/10 rounded-full blur-2xl" />
-                    </>
-                  )}
-                  {pkg.badge && (
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-brand-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/40">
-                        <Star className="h-3.5 w-3.5 fill-white" />
-                        {pkg.badge}
+                Transform Your Life <span className="text-primary">Today</span>
+              </motion.h2>
+              <motion.p
+                className="text-sm md:text-base lg:text-lg text-black dark:text-white mx-auto font-bold px-4 md:whitespace-nowrap"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                Choose the perfect plan that fits your lifestyle and commit to
+                your wellness journey
+              </motion.p>
+            </div>
+            <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-[1200px] mx-auto">
+              {[
+                {
+                  name: "Fit Basic",
+                  price: "₹2,500",
+                  description:
+                    "Perfect for getting started with your fitness journey",
+                  features: [
+                    "Live Group Training",
+                    "Personalized Diet",
+                    "Weekly 1 Check-in",
+                    "WhatsApp Support",
+                  ],
+                  buttonText: "Start Fit Basic",
+                  gradient: "from-brand-500/10 to-brand-400/10",
+                },
+                {
+                  name: "Pro Transformation",
+                  price: "₹5,000",
+                  description: "Most comprehensive program for real results",
+                  features: [
+                    "Live Group Training",
+                    "Personalized Diet",
+                    "Weekly 2 Check-ins",
+                    "WhatsApp Support",
+                    "WhatsApp Community",
+                  ],
+                  featured: true,
+                  badge: "Popular",
+                  buttonText: "Start Pro Plan",
+                  gradient: "from-primary/20 to-brand-500/20",
+                },
+                {
+                  name: "Elite Athlete",
+                  price: "₹10,000",
+                  description: "Premium 1:1 coaching for maximum results",
+                  features: [
+                    "1:1 Personal Training",
+                    "Personalized Diet",
+                    "Weekly 2 Check-ins",
+                    "WhatsApp Support",
+                    "WhatsApp Community",
+                  ],
+                  buttonText: "Start Elite Plan",
+                  gradient: "from-amber-500/10 to-orange-500/10",
+                },
+              ].map((pkg, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className={`flex ${pkg.featured ? "md:-mt-4 md:mb-4" : ""}`}
+                >
+                  <Card
+                    className={`group flex flex-col w-full transition-all duration-500 bg-gradient-to-br ${pkg.gradient} backdrop-blur-sm border-2 ${pkg.featured ? "border-primary shadow-2xl shadow-primary/30 scale-[1.02]" : "border-primary/30 hover:border-primary/60"} hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 relative overflow-visible rounded-2xl`}
+                  >
+                    {pkg.featured && (
+                      <>
+                        <div className="absolute -right-6 -top-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
+                        <div className="absolute -left-6 -bottom-6 w-32 h-32 bg-brand-500/10 rounded-full blur-3xl" />
+                      </>
+                    )}
+                    {pkg.badge && (
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-brand-600 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/40">
+                          <Star className="h-4 w-4 fill-white" />
+                          {pkg.badge}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                  <CardContent className={`p-5 space-y-4 relative ${pkg.featured ? 'pt-8' : ''}`}>
-                    <div className="text-center">
-                      <h3 className="font-heading text-2xl font-extrabold mb-1 text-foreground">
-                        {pkg.name}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">{pkg.description}</p>
-                    </div>
-                    <div className="text-center py-3">
-                      <div className="font-heading text-4xl font-black text-foreground">
-                        {pkg.price}
-                      </div>
-                      <span className="text-sm text-muted-foreground font-medium">per month</span>
-                    </div>
-                    <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-                    <ul className="grid grid-cols-1 gap-3 py-2">
-                      {pkg.features.map((feature, j) => (
-                        <li key={j} className="flex items-center gap-3">
-                          <div className={`h-5 w-5 rounded-full ${pkg.featured ? 'bg-primary' : 'bg-primary/80'} flex items-center justify-center flex-shrink-0 shadow-md`}>
-                            <Check className="h-3 w-3 text-white" />
-                          </div>
-                          <span className="text-sm text-foreground font-medium">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button 
-                      onClick={openWhatsApp} 
-                      className={`w-full rounded-full py-5 text-sm font-bold transition-all duration-300 ${pkg.featured ? 'bg-primary hover:bg-primary/90 shadow-lg shadow-primary/40' : 'bg-primary/90 hover:bg-primary'} text-white`}
-                      data-testid={`button-select-mobile-${pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    )}
+                    <CardContent
+                      className={`p-6 lg:p-8 space-y-5 relative flex flex-col h-full ${pkg.featured ? "pt-10" : ""}`}
                     >
-                      {pkg.buttonText}
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                      <div className="text-center">
+                        <h3 className="font-heading text-2xl lg:text-3xl font-extrabold mb-2 text-foreground">
+                          {pkg.name}
+                        </h3>
+                        <p className="text-muted-foreground text-sm">
+                          {pkg.description}
+                        </p>
+                      </div>
+                      <div className="text-center py-4">
+                        <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">
+                          {pkg.price}
+                        </div>
+                        <span className="text-sm text-muted-foreground font-medium">
+                          per month
+                        </span>
+                      </div>
+                      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                      <ul className="grid grid-cols-1 gap-4 flex-1 py-2">
+                        {pkg.features.map((feature, j) => (
+                          <li
+                            key={j}
+                            className="flex items-center gap-3 group/item"
+                          >
+                            <div
+                              className={`h-6 w-6 rounded-full ${pkg.featured ? "bg-primary" : "bg-primary/80"} flex items-center justify-center flex-shrink-0 shadow-md`}
+                            >
+                              <Check className="h-3.5 w-3.5 text-white" />
+                            </div>
+                            <span className="text-sm lg:text-base text-foreground font-medium">
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button
+                        onClick={openWhatsApp}
+                        className={`w-full rounded-full py-6 text-base font-bold transition-all duration-300 ${pkg.featured ? "bg-primary hover:bg-primary/90 shadow-lg shadow-primary/40" : "bg-primary/90 hover:bg-primary"} text-white mt-auto`}
+                        data-testid={`button-select-${pkg.name.toLowerCase().replace(/\s+/g, "-")}`}
+                      >
+                        {pkg.buttonText}
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Mobile View - Stacked Cards */}
+            <div className="md:hidden space-y-6">
+              {[
+                {
+                  name: "Fit Basic",
+                  price: "₹2,500",
+                  description:
+                    "Perfect for getting started with your fitness journey",
+                  features: [
+                    "Live Group Training",
+                    "Personalized Diet",
+                    "Weekly 1 Check-in",
+                    "WhatsApp Support",
+                  ],
+                  buttonText: "Start Fit Basic",
+                  gradient: "from-brand-500/10 to-brand-400/10",
+                },
+                {
+                  name: "Pro Transformation",
+                  price: "₹5,000",
+                  description: "Most comprehensive program for real results",
+                  features: [
+                    "Live Group Training",
+                    "Personalized Diet",
+                    "Weekly 2 Check-ins",
+                    "WhatsApp Support",
+                    "WhatsApp Community",
+                  ],
+                  featured: true,
+                  badge: "Popular",
+                  buttonText: "Start Pro Plan",
+                  gradient: "from-primary/20 to-brand-500/20",
+                },
+                {
+                  name: "Elite Athlete",
+                  price: "₹10,000",
+                  description: "Premium 1:1 coaching for maximum results",
+                  features: [
+                    "1:1 Personal Training",
+                    "Personalized Diet",
+                    "Weekly 2 Check-ins",
+                    "WhatsApp Support",
+                    "WhatsApp Community",
+                  ],
+                  buttonText: "Start Elite Plan",
+                  gradient: "from-amber-500/10 to-orange-500/10",
+                },
+              ].map((pkg, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <Card
+                    className={`group transition-all duration-500 bg-gradient-to-br ${pkg.gradient} backdrop-blur-sm border-2 ${pkg.featured ? "border-primary shadow-2xl shadow-primary/30" : "border-primary/30"} relative overflow-visible rounded-2xl`}
+                  >
+                    {pkg.featured && (
+                      <>
+                        <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
+                        <div className="absolute -left-4 -bottom-4 w-24 h-24 bg-brand-500/10 rounded-full blur-2xl" />
+                      </>
+                    )}
+                    {pkg.badge && (
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-brand-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/40">
+                          <Star className="h-3.5 w-3.5 fill-white" />
+                          {pkg.badge}
+                        </div>
+                      </div>
+                    )}
+                    <CardContent
+                      className={`p-5 space-y-4 relative ${pkg.featured ? "pt-8" : ""}`}
+                    >
+                      <div className="text-center">
+                        <h3 className="font-heading text-2xl font-extrabold mb-1 text-foreground">
+                          {pkg.name}
+                        </h3>
+                        <p className="text-muted-foreground text-sm">
+                          {pkg.description}
+                        </p>
+                      </div>
+                      <div className="text-center py-3">
+                        <div className="font-heading text-4xl font-black text-foreground">
+                          {pkg.price}
+                        </div>
+                        <span className="text-sm text-muted-foreground font-medium">
+                          per month
+                        </span>
+                      </div>
+                      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                      <ul className="grid grid-cols-1 gap-3 py-2">
+                        {pkg.features.map((feature, j) => (
+                          <li key={j} className="flex items-center gap-3">
+                            <div
+                              className={`h-5 w-5 rounded-full ${pkg.featured ? "bg-primary" : "bg-primary/80"} flex items-center justify-center flex-shrink-0 shadow-md`}
+                            >
+                              <Check className="h-3 w-3 text-white" />
+                            </div>
+                            <span className="text-sm text-foreground font-medium">
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button
+                        onClick={openWhatsApp}
+                        className={`w-full rounded-full py-5 text-sm font-bold transition-all duration-300 ${pkg.featured ? "bg-primary hover:bg-primary/90 shadow-lg shadow-primary/40" : "bg-primary/90 hover:bg-primary"} text-white`}
+                        data-testid={`button-select-mobile-${pkg.name.toLowerCase().replace(/\s+/g, "-")}`}
+                      >
+                        {pkg.buttonText}
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
         </section>
       </AnimatedSection>
 
       {/* Transformation Gallery - Auto-scrolling Slider */}
       <AnimatedSection variant="slideInRight">
-        <section className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10" id="transformations">
+        <section
+          className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10"
+          id="transformations"
+        >
           <div className="w-full relative">
             <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
-              <motion.h2 
+              <motion.h2
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1039,7 +1246,7 @@ export default function Home() {
               >
                 Witness the <span className="text-primary">Transformation</span>
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-sm md:text-base lg:text-lg text-black dark:text-white max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1047,10 +1254,11 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 data-testid="text-transformations-subtitle"
               >
-                From doubt to dedication, see how our members achieved their dream bodies
+                From doubt to dedication, see how our members achieved their
+                dream bodies
               </motion.p>
             </div>
-            
+
             <style>{`
               @keyframes scroll-horizontal {
                 0% {
@@ -1085,30 +1293,62 @@ export default function Home() {
                 animation-play-state: paused;
               }
             `}</style>
-            
+
             {/* First Carousel - Right to Left */}
             <div className="w-full overflow-hidden mb-8">
               <div className="scroll-container">
                 {/* First set of images */}
                 {[
-                  { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1" },
-                  { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2" },
-                  { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3" },
-                  { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4" },
-                  { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5" },
-                  { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6" },
-                  { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7" },
-                  { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8" }
+                  {
+                    img: transform1,
+                    alt: "Fitness transformation 1",
+                    testId: "img-transformation-1",
+                  },
+                  {
+                    img: transform2,
+                    alt: "Fitness transformation 2",
+                    testId: "img-transformation-2",
+                  },
+                  {
+                    img: transform3,
+                    alt: "Fitness transformation 3",
+                    testId: "img-transformation-3",
+                  },
+                  {
+                    img: transform4,
+                    alt: "Fitness transformation 4",
+                    testId: "img-transformation-4",
+                  },
+                  {
+                    img: transform5,
+                    alt: "Fitness transformation 5",
+                    testId: "img-transformation-5",
+                  },
+                  {
+                    img: transform6,
+                    alt: "Fitness transformation 6",
+                    testId: "img-transformation-6",
+                  },
+                  {
+                    img: transform7,
+                    alt: "Fitness transformation 7",
+                    testId: "img-transformation-7",
+                  },
+                  {
+                    img: transform8,
+                    alt: "Fitness transformation 8",
+                    testId: "img-transformation-8",
+                  },
                 ].map((item, idx) => (
-                  <div 
+                  <div
                     key={idx}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-${idx + 1}`}
                   >
                     <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
-                      <img 
-                        src={item.img} 
-                        alt={item.alt} 
+                      <img
+                        src={item.img}
+                        alt={item.alt}
                         className="w-full h-full object-cover"
                         data-testid={item.testId}
                       />
@@ -1117,23 +1357,47 @@ export default function Home() {
                 ))}
                 {/* Duplicate set for infinite scroll effect */}
                 {[
-                  { img: transform1, alt: "Fitness transformation 1 duplicate" },
-                  { img: transform2, alt: "Fitness transformation 2 duplicate" },
-                  { img: transform3, alt: "Fitness transformation 3 duplicate" },
-                  { img: transform4, alt: "Fitness transformation 4 duplicate" },
-                  { img: transform5, alt: "Fitness transformation 5 duplicate" },
-                  { img: transform6, alt: "Fitness transformation 6 duplicate" },
-                  { img: transform7, alt: "Fitness transformation 7 duplicate" },
-                  { img: transform8, alt: "Fitness transformation 8 duplicate" }
+                  {
+                    img: transform1,
+                    alt: "Fitness transformation 1 duplicate",
+                  },
+                  {
+                    img: transform2,
+                    alt: "Fitness transformation 2 duplicate",
+                  },
+                  {
+                    img: transform3,
+                    alt: "Fitness transformation 3 duplicate",
+                  },
+                  {
+                    img: transform4,
+                    alt: "Fitness transformation 4 duplicate",
+                  },
+                  {
+                    img: transform5,
+                    alt: "Fitness transformation 5 duplicate",
+                  },
+                  {
+                    img: transform6,
+                    alt: "Fitness transformation 6 duplicate",
+                  },
+                  {
+                    img: transform7,
+                    alt: "Fitness transformation 7 duplicate",
+                  },
+                  {
+                    img: transform8,
+                    alt: "Fitness transformation 8 duplicate",
+                  },
                 ].map((item, idx) => (
-                  <div 
+                  <div
                     key={`duplicate-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
                     <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
-                      <img 
-                        src={item.img} 
-                        alt={item.alt} 
+                      <img
+                        src={item.img}
+                        alt={item.alt}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -1147,24 +1411,56 @@ export default function Home() {
               <div className="scroll-container-reverse">
                 {/* First set of images */}
                 {[
-                  { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1-reverse" },
-                  { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2-reverse" },
-                  { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3-reverse" },
-                  { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4-reverse" },
-                  { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5-reverse" },
-                  { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6-reverse" },
-                  { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7-reverse" },
-                  { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8-reverse" }
+                  {
+                    img: transform1,
+                    alt: "Fitness transformation 1",
+                    testId: "img-transformation-1-reverse",
+                  },
+                  {
+                    img: transform2,
+                    alt: "Fitness transformation 2",
+                    testId: "img-transformation-2-reverse",
+                  },
+                  {
+                    img: transform3,
+                    alt: "Fitness transformation 3",
+                    testId: "img-transformation-3-reverse",
+                  },
+                  {
+                    img: transform4,
+                    alt: "Fitness transformation 4",
+                    testId: "img-transformation-4-reverse",
+                  },
+                  {
+                    img: transform5,
+                    alt: "Fitness transformation 5",
+                    testId: "img-transformation-5-reverse",
+                  },
+                  {
+                    img: transform6,
+                    alt: "Fitness transformation 6",
+                    testId: "img-transformation-6-reverse",
+                  },
+                  {
+                    img: transform7,
+                    alt: "Fitness transformation 7",
+                    testId: "img-transformation-7-reverse",
+                  },
+                  {
+                    img: transform8,
+                    alt: "Fitness transformation 8",
+                    testId: "img-transformation-8-reverse",
+                  },
                 ].map((item, idx) => (
-                  <div 
+                  <div
                     key={idx}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                     data-testid={`card-transformation-reverse-${idx + 1}`}
                   >
                     <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
-                      <img 
-                        src={item.img} 
-                        alt={item.alt} 
+                      <img
+                        src={item.img}
+                        alt={item.alt}
                         className="w-full h-full object-cover"
                         data-testid={item.testId}
                       />
@@ -1173,23 +1469,47 @@ export default function Home() {
                 ))}
                 {/* Duplicate set for infinite scroll effect */}
                 {[
-                  { img: transform1, alt: "Fitness transformation 1 duplicate" },
-                  { img: transform2, alt: "Fitness transformation 2 duplicate" },
-                  { img: transform3, alt: "Fitness transformation 3 duplicate" },
-                  { img: transform4, alt: "Fitness transformation 4 duplicate" },
-                  { img: transform5, alt: "Fitness transformation 5 duplicate" },
-                  { img: transform6, alt: "Fitness transformation 6 duplicate" },
-                  { img: transform7, alt: "Fitness transformation 7 duplicate" },
-                  { img: transform8, alt: "Fitness transformation 8 duplicate" }
+                  {
+                    img: transform1,
+                    alt: "Fitness transformation 1 duplicate",
+                  },
+                  {
+                    img: transform2,
+                    alt: "Fitness transformation 2 duplicate",
+                  },
+                  {
+                    img: transform3,
+                    alt: "Fitness transformation 3 duplicate",
+                  },
+                  {
+                    img: transform4,
+                    alt: "Fitness transformation 4 duplicate",
+                  },
+                  {
+                    img: transform5,
+                    alt: "Fitness transformation 5 duplicate",
+                  },
+                  {
+                    img: transform6,
+                    alt: "Fitness transformation 6 duplicate",
+                  },
+                  {
+                    img: transform7,
+                    alt: "Fitness transformation 7 duplicate",
+                  },
+                  {
+                    img: transform8,
+                    alt: "Fitness transformation 8 duplicate",
+                  },
                 ].map((item, idx) => (
-                  <div 
+                  <div
                     key={`duplicate-reverse-${idx}`}
                     className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
                   >
                     <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
-                      <img 
-                        src={item.img} 
-                        alt={item.alt} 
+                      <img
+                        src={item.img}
+                        alt={item.alt}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -1203,11 +1523,14 @@ export default function Home() {
 
       {/* Instagram Videos Section */}
       <AnimatedSection variant="zoomRotate">
-        <section className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10" id="instagram-videos">
+        <section
+          className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10"
+          id="instagram-videos"
+        >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(102, 172, 66,0.05),transparent_70%)]" />
           <div className="w-full px-3 md:px-5 lg:px-6 relative">
             <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
-              <motion.h2 
+              <motion.h2
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1216,18 +1539,19 @@ export default function Home() {
               >
                 Workout with HOC <span className="text-primary">Community</span>
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-sm md:text-base lg:text-lg text-black dark:text-white max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                Experience the energy, dedication, and transformation happening daily
+                Experience the energy, dedication, and transformation happening
+                daily
               </motion.p>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4"
               initial="hidden"
               whileInView="visible"
@@ -1235,17 +1559,41 @@ export default function Home() {
               variants={staggerContainer}
             >
               {[
-                { src: instagramVideo1, testId: "instagram-video-1", hideOnDesktop: false },
-                { src: instagramVideo2, testId: "instagram-video-2", hideOnDesktop: false },
-                { src: instagramVideo3, testId: "instagram-video-3", hideOnDesktop: false },
-                { src: instagramVideo4, testId: "instagram-video-4", hideOnDesktop: false },
-                { src: instagramVideo5, testId: "instagram-video-5", hideOnDesktop: false },
-                { src: instagramVideo6, testId: "instagram-video-6", hideOnDesktop: true }
+                {
+                  src: instagramVideo1,
+                  testId: "instagram-video-1",
+                  hideOnDesktop: false,
+                },
+                {
+                  src: instagramVideo2,
+                  testId: "instagram-video-2",
+                  hideOnDesktop: false,
+                },
+                {
+                  src: instagramVideo3,
+                  testId: "instagram-video-3",
+                  hideOnDesktop: false,
+                },
+                {
+                  src: instagramVideo4,
+                  testId: "instagram-video-4",
+                  hideOnDesktop: false,
+                },
+                {
+                  src: instagramVideo5,
+                  testId: "instagram-video-5",
+                  hideOnDesktop: false,
+                },
+                {
+                  src: instagramVideo6,
+                  testId: "instagram-video-6",
+                  hideOnDesktop: true,
+                },
               ].map((video, idx) => (
                 <motion.div
                   key={idx}
                   variants={fadeInUp}
-                  className={`group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 w-full aspect-[9/16] ${video.hideOnDesktop ? 'lg:hidden' : ''}`}
+                  className={`group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 w-full aspect-[9/16] ${video.hideOnDesktop ? "lg:hidden" : ""}`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                   <video
@@ -1265,17 +1613,17 @@ export default function Home() {
 
             {/* Social Links */}
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mt-10">
-              <a 
-                href="https://www.instagram.com/house_of_champions_studio/" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/house_of_champions_studio/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group hover-elevate transition-all duration-300 border-2 border-primary rounded-full px-5 py-2.5"
                 data-testid="link-instagram-profile"
               >
                 <div className="w-7 h-7 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <img 
-                    src={instagramIcon} 
-                    alt="Instagram" 
+                  <img
+                    src={instagramIcon}
+                    alt="Instagram"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -1284,17 +1632,17 @@ export default function Home() {
                 </span>
               </a>
 
-              <a 
-                href="https://www.facebook.com/house_of_champions_studio/" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/house_of_champions_studio/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group hover-elevate transition-all duration-300 border-2 border-primary rounded-full px-5 py-2.5"
                 data-testid="link-facebook-profile"
               >
                 <div className="w-7 h-7 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <img 
-                    src={facebookIcon} 
-                    alt="Facebook" 
+                  <img
+                    src={facebookIcon}
+                    alt="Facebook"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -1309,10 +1657,13 @@ export default function Home() {
 
       {/* About House of Champions */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10" id="about">
+        <section
+          className="py-10 md:py-12 lg:py-16 bg-card relative overflow-hidden border-t border-primary/10"
+          id="about"
+        >
           <div className="w-full px-6 md:px-12 lg:px-16 relative mx-auto">
             <div className="text-center mb-10 md:mb-12">
-              <motion.h2 
+              <motion.h2
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1322,7 +1673,7 @@ export default function Home() {
               >
                 About House of <span className="text-primary">Champions</span>
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-sm md:text-base lg:text-lg text-foreground max-w-3xl mx-auto font-semibold leading-relaxed md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1330,7 +1681,8 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 data-testid="text-about-subtitle"
               >
-                From our gym floor to your home - real training, real results, anywhere in the world
+                From our gym floor to your home - real training, real results,
+                anywhere in the world
               </motion.p>
             </div>
 
@@ -1345,12 +1697,27 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                   className="space-y-4"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-story">Our Story</h3>
-                  <p className="text-foreground text-sm md:text-base leading-relaxed" data-testid="text-our-story">
-                    House of Champions started as a physical gym - a place where real sweat hits the floor, real weights get lifted, and real transformations happen every single day. We built a community of dedicated athletes and fitness enthusiasts who push their limits together.
+                  <h3
+                    className="text-2xl md:text-3xl font-bold text-primary"
+                    data-testid="heading-our-story"
+                  >
+                    Our Story
+                  </h3>
+                  <p
+                    className="text-foreground text-sm md:text-base leading-relaxed"
+                    data-testid="text-our-story"
+                  >
+                    House of Champions started as a physical gym - a place where
+                    real sweat hits the floor, real weights get lifted, and real
+                    transformations happen every single day. We built a
+                    community of dedicated athletes and fitness enthusiasts who
+                    push their limits together.
                   </p>
                   <p className="text-foreground text-sm md:text-base leading-relaxed">
-                    Now, we're bringing that same energy, expertise, and proven training methods directly to you - wherever you are. Our online training programs deliver the authentic HOC experience to clients across the globe.
+                    Now, we're bringing that same energy, expertise, and proven
+                    training methods directly to you - wherever you are. Our
+                    online training programs deliver the authentic HOC
+                    experience to clients across the globe.
                   </p>
                 </motion.div>
 
@@ -1362,28 +1729,45 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="space-y-4"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-vision">Why Train With Us?</h3>
-                  <p className="text-foreground text-sm md:text-base leading-relaxed" data-testid="text-our-vision">
-                    We know what works because we do it every day at our gym. Our online programs are built from years of hands-on experience training real clients with real goals. No fancy theories - just proven methods that get results.
+                  <h3
+                    className="text-2xl md:text-3xl font-bold text-primary"
+                    data-testid="heading-our-vision"
+                  >
+                    Why Train With Us?
+                  </h3>
+                  <p
+                    className="text-foreground text-sm md:text-base leading-relaxed"
+                    data-testid="text-our-vision"
+                  >
+                    We know what works because we do it every day at our gym.
+                    Our online programs are built from years of hands-on
+                    experience training real clients with real goals. No fancy
+                    theories - just proven methods that get results.
                   </p>
                   <div className="space-y-3 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-foreground text-sm md:text-base">Same trainers who run our gym - now coaching you online</p>
+                      <p className="text-foreground text-sm md:text-base">
+                        Same trainers who run our gym - now coaching you online
+                      </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-foreground text-sm md:text-base">Personalized programs that fit your lifestyle and goals</p>
+                      <p className="text-foreground text-sm md:text-base">
+                        Personalized programs that fit your lifestyle and goals
+                      </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-foreground text-sm md:text-base">Join our growing community of champions worldwide</p>
+                      <p className="text-foreground text-sm md:text-base">
+                        Join our growing community of champions worldwide
+                      </p>
                     </div>
                   </div>
                 </motion.div>
@@ -1415,9 +1799,9 @@ export default function Home() {
                 {/* Owner Photo */}
                 <div className="w-full">
                   <div className="relative rounded-lg overflow-hidden border-2 border-primary aspect-[3/4]">
-                    <img 
-                      src={ownerPhoto} 
-                      alt="House of Champions Owner" 
+                    <img
+                      src={ownerPhoto}
+                      alt="House of Champions Owner"
                       className="w-full h-full object-cover"
                       data-testid="img-owner"
                     />
@@ -1426,12 +1810,22 @@ export default function Home() {
 
                 {/* Meet Our Founder */}
                 <div className="w-full text-left space-y-3">
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-founder">The Man Behind HOC</h3>
+                  <h3
+                    className="text-2xl md:text-3xl font-bold text-primary"
+                    data-testid="heading-founder"
+                  >
+                    The Man Behind HOC
+                  </h3>
                   <p className="text-foreground text-sm md:text-base leading-relaxed">
-                    After building House of Champions gym from the ground up and transforming thousands of lives in person, I realized that great training shouldn't be limited by location. That's why I started online coaching - to bring the HOC experience to anyone, anywhere.
+                    After building House of Champions gym from the ground up and
+                    transforming thousands of lives in person, I realized that
+                    great training shouldn't be limited by location. That's why
+                    I started online coaching - to bring the HOC experience to
+                    anyone, anywhere.
                   </p>
                   <p className="text-primary font-semibold text-sm md:text-base italic">
-                    "I built this gym with my own hands. Now I'm building champions across the world. Let's get to work."
+                    "I built this gym with my own hands. Now I'm building
+                    champions across the world. Let's get to work."
                   </p>
                 </div>
               </motion.div>
@@ -1445,23 +1839,30 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="mt-12"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground" data-testid="heading-gallery">OUR HOC <span className="text-primary">GALLERY</span></h3>
+              <h3
+                className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground"
+                data-testid="heading-gallery"
+              >
+                OUR HOC <span className="text-primary">GALLERY</span>
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[gymPhoto1, gymPhoto2, gymPhoto3, gymPhoto4].map((img, idx) => (
-                  <motion.div 
-                    key={idx}
-                    className="relative rounded-lg overflow-hidden border-2 border-primary aspect-square group cursor-pointer"
-                    data-testid={`img-gallery-${idx + 1}`}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img 
-                      src={img} 
-                      alt={`Gym photo ${idx + 1}`} 
-                      className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-110"
-                    />
-                  </motion.div>
-                ))}
+                {[gymPhoto1, gymPhoto2, gymPhoto3, gymPhoto4].map(
+                  (img, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="relative rounded-lg overflow-hidden border-2 border-primary aspect-square group cursor-pointer"
+                      data-testid={`img-gallery-${idx + 1}`}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <img
+                        src={img}
+                        alt={`Gym photo ${idx + 1}`}
+                        className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-110"
+                      />
+                    </motion.div>
+                  ),
+                )}
               </div>
             </motion.div>
           </div>
@@ -1470,10 +1871,14 @@ export default function Home() {
 
       {/* Our Services - Redesigned */}
       <AnimatedSection variant="slideUp">
-        <section id="program" className="py-8 md:py-10 lg:py-12 bg-card relative overflow-hidden border-t border-primary/10" data-testid="section-training-programs">
+        <section
+          id="program"
+          className="py-8 md:py-10 lg:py-12 bg-card relative overflow-hidden border-t border-primary/10"
+          data-testid="section-training-programs"
+        >
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <motion.h2 
+              <motion.h2
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1483,7 +1888,7 @@ export default function Home() {
               >
                 Our <span className="text-primary">Services</span>
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-sm md:text-base lg:text-lg text-foreground max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1494,26 +1899,26 @@ export default function Home() {
                 Comprehensive programs for every fitness level and goal
               </motion.p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {[
-                { 
-                  image: cardioTrainingImage, 
-                  title: "Personalised Training", 
+                {
+                  image: cardioTrainingImage,
+                  title: "Personalised Training",
                   desc: "Science based plans + nutrition based on your goals and lifestyle.",
-                  testId: "card-personalised-training"
+                  testId: "card-personalised-training",
                 },
-                { 
-                  image: strengthTrainingImage, 
-                  title: "Personal Guidance", 
+                {
+                  image: strengthTrainingImage,
+                  title: "Personal Guidance",
                   desc: "Weekly check-ins, accountability and form corrections.",
-                  testId: "card-personal-guidance"
+                  testId: "card-personal-guidance",
                 },
-                { 
-                  image: flexibilityTrainingImage, 
-                  title: "Proven Transformation", 
+                {
+                  image: flexibilityTrainingImage,
+                  title: "Proven Transformation",
                   desc: "6+ years of coaching experience. 1000+ lives impacted.",
-                  testId: "card-proven-transformation"
+                  testId: "card-proven-transformation",
                 },
               ].map((item, i) => (
                 <motion.div
@@ -1524,21 +1929,30 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="flex"
                 >
-                  <Card className="group overflow-hidden hover-elevate bg-card shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary flex flex-col w-full" data-testid={item.testId}>
+                  <Card
+                    className="group overflow-hidden hover-elevate bg-card shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary flex flex-col w-full"
+                    data-testid={item.testId}
+                  >
                     <div className="relative h-56 md:h-64 w-full overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
-                      <img 
-                        src={item.image} 
+                      <img
+                        src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                         data-testid={`img-${item.testId}`}
                       />
                     </div>
                     <CardContent className="p-5 md:p-6 space-y-2 flex-1 flex flex-col">
-                      <h3 className="font-heading text-lg md:text-xl lg:text-2xl font-bold text-black" data-testid={`heading-${item.testId}`}>
+                      <h3
+                        className="font-heading text-lg md:text-xl lg:text-2xl font-bold text-black"
+                        data-testid={`heading-${item.testId}`}
+                      >
                         {item.title}
                       </h3>
-                      <p className="text-black leading-relaxed text-sm md:text-base flex-1" data-testid={`text-${item.testId}`}>
+                      <p
+                        className="text-black leading-relaxed text-sm md:text-base flex-1"
+                        data-testid={`text-${item.testId}`}
+                      >
                         {item.desc}
                       </p>
                     </CardContent>
@@ -1656,10 +2070,13 @@ export default function Home() {
 
       {/* Meet Trainers - Redesigned */}
       <AnimatedSection variant="scaleIn">
-        <section className="bg-card flex items-center justify-center relative overflow-hidden py-10 md:py-12 lg:py-16 border-t border-primary/10" id="trainers">
+        <section
+          className="bg-card flex items-center justify-center relative overflow-hidden py-10 md:py-12 lg:py-16 border-t border-primary/10"
+          id="trainers"
+        >
           <div className="w-full px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-10 lg:mb-12">
-              <motion.h2 
+              <motion.h2
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1668,17 +2085,18 @@ export default function Home() {
               >
                 Meet Your <span className="text-primary">Trainers</span>
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-sm md:text-base lg:text-lg text-foreground mx-auto font-bold px-4 md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                Certified professionals dedicated to transforming your fitness journey
+                Certified professionals dedicated to transforming your fitness
+                journey
               </motion.p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -1687,12 +2105,12 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-primary shadow-2xl"
               >
-                <video 
-                  src={trainerVideo1} 
+                <video
+                  src={trainerVideo1}
                   className="w-full h-full object-cover"
-                  autoPlay 
-                  loop 
-                  muted 
+                  autoPlay
+                  loop
+                  muted
                   playsInline
                 />
               </motion.div>
@@ -1704,9 +2122,9 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="relative aspect-[3/4] overflow-hidden rounded-xl border-4 border-primary shadow-2xl z-10 scale-110"
               >
-                <img 
-                  src={trainerPhoto} 
-                  alt="Trainer Winston" 
+                <img
+                  src={trainerPhoto}
+                  alt="Trainer Winston"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -1718,12 +2136,12 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-primary shadow-2xl"
               >
-                <video 
-                  src={trainerVideo2} 
+                <video
+                  src={trainerVideo2}
                   className="w-full h-full object-cover"
-                  autoPlay 
-                  loop 
-                  muted 
+                  autoPlay
+                  loop
+                  muted
                   playsInline
                 />
               </motion.div>
@@ -1734,15 +2152,18 @@ export default function Home() {
 
       {/* Why Choose Train With Winston Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-brand-50 via-brand-50 to-brand-100 relative overflow-hidden border-t border-primary/10" id="why-choose">
+        <section
+          className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-brand-50 via-brand-50 to-brand-100 relative overflow-hidden border-t border-primary/10"
+          id="why-choose"
+        >
           {/* Subtle decorative background */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-brand-200/20 rounded-full blur-3xl" />
-          
+
           <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
             {/* Header - Compact */}
             <div className="text-center mb-6 md:mb-8">
-              <motion.h2 
+              <motion.h2
                 className="font-heading text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1752,7 +2173,7 @@ export default function Home() {
               >
                 The <span className="text-primary">Winston</span> Difference
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-xs md:text-sm lg:text-base text-foreground max-w-xl mx-auto"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1818,10 +2239,16 @@ export default function Home() {
                       <item.icon className="h-5 w-5 md:h-5 md:w-5 text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-heading text-sm md:text-base font-bold text-foreground mb-0.5" data-testid={`heading-${item.testId}`}>
+                      <h3
+                        className="font-heading text-sm md:text-base font-bold text-foreground mb-0.5"
+                        data-testid={`heading-${item.testId}`}
+                      >
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground text-xs md:text-sm leading-snug" data-testid={`text-${item.testId}`}>
+                      <p
+                        className="text-muted-foreground text-xs md:text-sm leading-snug"
+                        data-testid={`text-${item.testId}`}
+                      >
                         {item.desc}
                       </p>
                     </div>
@@ -1831,14 +2258,14 @@ export default function Home() {
             </div>
 
             {/* Bottom CTA */}
-            <motion.div 
+            <motion.div
               className="text-center mt-6 md:mt-8"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Button 
+              <Button
                 onClick={openWhatsApp}
                 className="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-semibold shadow-lg rounded-full px-8"
                 data-testid="button-why-choose-cta"
@@ -1852,13 +2279,16 @@ export default function Home() {
 
       {/* FAQ Section */}
       <AnimatedSection variant="slideUp">
-        <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-brand-50 via-brand-50 to-brand-100 relative overflow-hidden border-t border-primary/10" id="faq">
+        <section
+          className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-brand-50 via-brand-50 to-brand-100 relative overflow-hidden border-t border-primary/10"
+          id="faq"
+        >
           <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-brand-200/20 rounded-full blur-3xl" />
           <div className="container px-4 md:px-6 relative max-w-5xl mx-auto">
             {/* Header */}
             <div className="text-center mb-6 md:mb-8">
-              <motion.h2 
+              <motion.h2
                 className="font-heading text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1868,7 +2298,7 @@ export default function Home() {
               >
                 Frequently Asked <span className="text-primary">Questions</span>
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-xs md:text-sm lg:text-base text-foreground max-w-lg mx-auto"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1884,33 +2314,39 @@ export default function Home() {
               {[
                 {
                   question: "How does online coaching work?",
-                  answer: "You'll get a personalized workout plan, diet guidance, and weekly video check-ins with your coach. Everything is accessible through WhatsApp - workouts, nutrition tips, form corrections, and direct messaging with your trainer.",
-                  testId: "faq-how-it-works"
+                  answer:
+                    "You'll get a personalized workout plan, diet guidance, and weekly video check-ins with your coach. Everything is accessible through WhatsApp - workouts, nutrition tips, form corrections, and direct messaging with your trainer.",
+                  testId: "faq-how-it-works",
                 },
                 {
                   question: "Do I need gym equipment?",
-                  answer: "Not at all! We design programs that work for your situation - whether you have a full gym, basic equipment at home, or no equipment at all. Your plan is customized to what you have access to.",
-                  testId: "faq-equipment"
+                  answer:
+                    "Not at all! We design programs that work for your situation - whether you have a full gym, basic equipment at home, or no equipment at all. Your plan is customized to what you have access to.",
+                  testId: "faq-equipment",
                 },
                 {
                   question: "Will the diet plan be too strict to follow?",
-                  answer: "No strict diets here! We create flexible nutrition plans based on foods you already enjoy. No complicated meal preps or expensive supplements - just simple, sustainable eating habits that fit your lifestyle.",
-                  testId: "faq-diet"
+                  answer:
+                    "No strict diets here! We create flexible nutrition plans based on foods you already enjoy. No complicated meal preps or expensive supplements - just simple, sustainable eating habits that fit your lifestyle.",
+                  testId: "faq-diet",
                 },
                 {
                   question: "I'm a complete beginner. Can I still join?",
-                  answer: "Absolutely! Most of our members start as beginners. Your program will be designed for your current fitness level with proper progression. We focus on building correct form and habits first.",
-                  testId: "faq-beginners"
+                  answer:
+                    "Absolutely! Most of our members start as beginners. Your program will be designed for your current fitness level with proper progression. We focus on building correct form and habits first.",
+                  testId: "faq-beginners",
                 },
                 {
                   question: "What's included in the 1-day trial for ₹99?",
-                  answer: "The trial includes a full day of coaching experience - a sample workout plan, diet recommendations for the day, and direct access to chat with your assigned coach. It's the perfect way to experience our coaching style.",
-                  testId: "faq-trial"
+                  answer:
+                    "The trial includes a full day of coaching experience - a sample workout plan, diet recommendations for the day, and direct access to chat with your assigned coach. It's the perfect way to experience our coaching style.",
+                  testId: "faq-trial",
                 },
                 {
                   question: "How soon will I see results?",
-                  answer: "Most clients notice improved energy and strength within 2 weeks. Visible body transformation typically starts showing in 4-6 weeks with consistent effort. We track your progress weekly to ensure you're moving forward.",
-                  testId: "faq-results"
+                  answer:
+                    "Most clients notice improved energy and strength within 2 weeks. Visible body transformation typically starts showing in 4-6 weeks with consistent effort. We track your progress weekly to ensure you're moving forward.",
+                  testId: "faq-results",
                 },
               ].map((faq, i) => {
                 const isOpen = openFaqIndex === i;
@@ -1922,11 +2358,11 @@ export default function Home() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.05 }}
                   >
-                    <div 
+                    <div
                       className={`bg-white/80 backdrop-blur-sm rounded-xl border transition-all duration-300 cursor-pointer ${
-                        isOpen 
-                          ? 'border-primary/40 shadow-md' 
-                          : 'border-primary/10 hover:border-primary/25 hover:shadow-sm'
+                        isOpen
+                          ? "border-primary/40 shadow-md"
+                          : "border-primary/10 hover:border-primary/25 hover:shadow-sm"
                       }`}
                       data-testid={faq.testId}
                       onClick={() => setOpenFaqIndex(isOpen ? null : i)}
@@ -1934,16 +2370,23 @@ export default function Home() {
                       <div className="p-3 md:p-4">
                         <div className="flex items-center justify-between gap-3">
                           <div className="flex items-center gap-2.5">
-                            <div className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
-                              isOpen 
-                                ? 'bg-gradient-to-br from-brand-500 to-brand-600' 
-                                : 'bg-primary/10'
-                            }`}>
-                              <span className={`text-sm md:text-base font-bold ${isOpen ? 'text-white' : 'text-primary'}`}>
+                            <div
+                              className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
+                                isOpen
+                                  ? "bg-gradient-to-br from-brand-500 to-brand-600"
+                                  : "bg-primary/10"
+                              }`}
+                            >
+                              <span
+                                className={`text-sm md:text-base font-bold ${isOpen ? "text-white" : "text-primary"}`}
+                              >
                                 {i + 1}
                               </span>
                             </div>
-                            <h3 className="font-heading text-sm md:text-base font-semibold text-foreground" data-testid={`question-${faq.testId}`}>
+                            <h3
+                              className="font-heading text-sm md:text-base font-semibold text-foreground"
+                              data-testid={`question-${faq.testId}`}
+                            >
                               {faq.question}
                             </h3>
                           </div>
@@ -1953,7 +2396,7 @@ export default function Home() {
                             className="flex-shrink-0"
                           >
                             <svg
-                              className={`w-4 h-4 md:w-5 md:h-5 transition-colors duration-300 ${isOpen ? 'text-primary' : 'text-muted-foreground'}`}
+                              className={`w-4 h-4 md:w-5 md:h-5 transition-colors duration-300 ${isOpen ? "text-primary" : "text-muted-foreground"}`}
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -1972,12 +2415,15 @@ export default function Home() {
                           animate={{
                             height: isOpen ? "auto" : 0,
                             opacity: isOpen ? 1 : 0,
-                            marginTop: isOpen ? 12 : 0
+                            marginTop: isOpen ? 12 : 0,
                           }}
                           transition={{ duration: 0.25 }}
                           style={{ overflow: "hidden" }}
                         >
-                          <p className="text-muted-foreground text-xs md:text-sm leading-relaxed pl-9 md:pl-10 pr-2" data-testid={`answer-${faq.testId}`}>
+                          <p
+                            className="text-muted-foreground text-xs md:text-sm leading-relaxed pl-9 md:pl-10 pr-2"
+                            data-testid={`answer-${faq.testId}`}
+                          >
                             {faq.answer}
                           </p>
                         </motion.div>
@@ -1989,14 +2435,21 @@ export default function Home() {
             </div>
 
             {/* Bottom text */}
-            <motion.p 
+            <motion.p
               className="text-center text-xs md:text-sm text-muted-foreground mt-5 md:mt-6"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Still have questions? <button onClick={openWhatsApp} className="text-primary font-semibold hover:underline" data-testid="button-faq-whatsapp">Chat with us on WhatsApp</button>
+              Still have questions?{" "}
+              <button
+                onClick={openWhatsApp}
+                className="text-primary font-semibold hover:underline"
+                data-testid="button-faq-whatsapp"
+              >
+                Chat with us on WhatsApp
+              </button>
             </motion.p>
           </div>
         </section>
@@ -2004,10 +2457,13 @@ export default function Home() {
 
       {/* Customer Testimonials Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-10 md:py-12 lg:py-16 bg-primary/5 relative overflow-hidden border-t border-primary/10" data-testid="section-testimonials">
+        <section
+          className="py-10 md:py-12 lg:py-16 bg-primary/5 relative overflow-hidden border-t border-primary/10"
+          data-testid="section-testimonials"
+        >
           <div className="max-w-full">
             <div className="text-center mb-12 md:mb-16 px-4">
-              <motion.h2 
+              <motion.h2
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -2017,7 +2473,7 @@ export default function Home() {
               >
                 What Our Members <span className="text-primary">Say</span>
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-sm md:text-base lg:text-lg text-foreground mx-auto font-semibold max-w-2xl md:whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -2025,7 +2481,8 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 data-testid="text-testimonials-subtitle"
               >
-                Over 1000+ lives transformed through our personalized online fitness programs
+                Over 1000+ lives transformed through our personalized online
+                fitness programs
               </motion.p>
             </div>
 
@@ -2037,9 +2494,15 @@ export default function Home() {
             {/* Desktop View: Three Row Continuous Scrolling */}
             <div className="hidden md:block">
               {/* Row 1: Left to Right - Displays first 6 testimonials (indices 0-5) */}
-              <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-1">
+              <div
+                className="relative overflow-hidden mb-6 testimonial-row"
+                data-testid="testimonial-row-1"
+              >
                 <div className="flex gap-6 animate-scroll-left">
-                  {[...testimonials.slice(0, 6), ...testimonials.slice(0, 6)].map((testimonial, index) => (
+                  {[
+                    ...testimonials.slice(0, 6),
+                    ...testimonials.slice(0, 6),
+                  ].map((testimonial, index) => (
                     <TestimonialCard
                       key={`row1-${index}`}
                       {...testimonial}
@@ -2050,9 +2513,15 @@ export default function Home() {
               </div>
 
               {/* Row 2: Right to Left - Displays next 7 testimonials (indices 6-12) */}
-              <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-2">
+              <div
+                className="relative overflow-hidden mb-6 testimonial-row"
+                data-testid="testimonial-row-2"
+              >
                 <div className="flex gap-6 animate-scroll-right">
-                  {[...testimonials.slice(6, 13), ...testimonials.slice(6, 13)].map((testimonial, index) => (
+                  {[
+                    ...testimonials.slice(6, 13),
+                    ...testimonials.slice(6, 13),
+                  ].map((testimonial, index) => (
                     <TestimonialCard
                       key={`row2-${index}`}
                       {...testimonial}
@@ -2063,9 +2532,15 @@ export default function Home() {
               </div>
 
               {/* Row 3: Left to Right - Displays last 7 testimonials (indices 13-19) */}
-              <div className="relative overflow-hidden testimonial-row" data-testid="testimonial-row-3">
+              <div
+                className="relative overflow-hidden testimonial-row"
+                data-testid="testimonial-row-3"
+              >
                 <div className="flex gap-6 animate-scroll-left">
-                  {[...testimonials.slice(13, 20), ...testimonials.slice(13, 20)].map((testimonial, index) => (
+                  {[
+                    ...testimonials.slice(13, 20),
+                    ...testimonials.slice(13, 20),
+                  ].map((testimonial, index) => (
                     <TestimonialCard
                       key={`row3-${index}`}
                       {...testimonial}
@@ -2081,11 +2556,14 @@ export default function Home() {
 
       {/* Contact Section - Light Green Background with Styled Cards */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-brand-50 via-brand-50 to-brand-100 border-t border-primary/10 relative overflow-hidden" id="contact">
+        <section
+          className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-brand-50 via-brand-50 to-brand-100 border-t border-primary/10 relative overflow-hidden"
+          id="contact"
+        >
           {/* Decorative background elements */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-200/30 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
-          
+
           <div className="container px-4 md:px-6 max-w-7xl mx-auto relative">
             <div className="text-center mb-8 md:mb-10">
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground">
@@ -2110,18 +2588,28 @@ export default function Home() {
                         Send Us a Message
                       </h3>
                     </div>
-                    
+
                     <Form {...form}>
-                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+                      <form
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className="space-y-3"
+                      >
                         <div className="grid md:grid-cols-2 gap-3">
                           <FormField
                             control={form.control}
                             name="name"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-sm font-medium text-muted-foreground">Name</FormLabel>
+                                <FormLabel className="text-sm font-medium text-muted-foreground">
+                                  Name
+                                </FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your name" {...field} data-testid="input-name" className="bg-background border-2 border-input focus:border-primary transition-colors" />
+                                  <Input
+                                    placeholder="Your name"
+                                    {...field}
+                                    data-testid="input-name"
+                                    className="bg-background border-2 border-input focus:border-primary transition-colors"
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -2132,68 +2620,100 @@ export default function Home() {
                             name="email"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-sm font-medium text-muted-foreground">Email</FormLabel>
+                                <FormLabel className="text-sm font-medium text-muted-foreground">
+                                  Email
+                                </FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your email" type="email" {...field} data-testid="input-email" className="bg-background border-2 border-input focus:border-primary transition-colors" />
+                                  <Input
+                                    placeholder="Your email"
+                                    type="email"
+                                    {...field}
+                                    data-testid="input-email"
+                                    className="bg-background border-2 border-input focus:border-primary transition-colors"
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
                             )}
                           />
                         </div>
-                        
+
                         <FormField
                           control={form.control}
                           name="contactNumber"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-sm font-medium text-muted-foreground">Phone Number</FormLabel>
+                              <FormLabel className="text-sm font-medium text-muted-foreground">
+                                Phone Number
+                              </FormLabel>
                               <FormControl>
                                 <div className="relative">
-                                  <Input 
+                                  <Input
                                     {...field}
-                                    placeholder="Enter 10 digit number" 
-                                    data-testid="input-contact" 
+                                    placeholder="Enter 10 digit number"
+                                    data-testid="input-contact"
                                     className="bg-background border-2 border-input focus:border-primary transition-colors pr-10"
                                     maxLength={10}
                                     inputMode="numeric"
                                     onChange={(e) => {
-                                      const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+                                      const value = e.target.value
+                                        .replace(/\D/g, "")
+                                        .slice(0, 10);
                                       field.onChange(value);
                                     }}
                                   />
-                                  {field.value && field.value.length === 10 && /^[0-9]+$/.test(field.value) && (
-                                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow">
-                                        <Check className="w-3 h-3 text-white" />
+                                  {field.value &&
+                                    field.value.length === 10 &&
+                                    /^[0-9]+$/.test(field.value) && (
+                                      <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                                        <div className="w-5 h-5 rounded-full bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow">
+                                          <Check className="w-3 h-3 text-white" />
+                                        </div>
                                       </div>
-                                    </div>
-                                  )}
+                                    )}
                                 </div>
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
-                        
+
                         <FormField
                           control={form.control}
                           name="purpose"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-sm font-medium text-muted-foreground">Service Needed</FormLabel>
-                              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormLabel className="text-sm font-medium text-muted-foreground">
+                                Service Needed
+                              </FormLabel>
+                              <Select
+                                onValueChange={field.onChange}
+                                defaultValue={field.value}
+                              >
                                 <FormControl>
-                                  <SelectTrigger data-testid="select-purpose" className="bg-background border-2 border-input focus:border-primary transition-colors">
+                                  <SelectTrigger
+                                    data-testid="select-purpose"
+                                    className="bg-background border-2 border-input focus:border-primary transition-colors"
+                                  >
                                     <SelectValue placeholder="Select a service" />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  <SelectItem value="weight-loss">Overall Weight Loss</SelectItem>
-                                  <SelectItem value="body-toning">For Body Toning</SelectItem>
-                                  <SelectItem value="postpartum">Reducing Postpartum Belly Fat</SelectItem>
-                                  <SelectItem value="strength-building">Build Strength/Endurance/Flexibility</SelectItem>
-                                  <SelectItem value="general-fitness">General Fitness</SelectItem>
+                                  <SelectItem value="weight-loss">
+                                    Overall Weight Loss
+                                  </SelectItem>
+                                  <SelectItem value="body-toning">
+                                    For Body Toning
+                                  </SelectItem>
+                                  <SelectItem value="postpartum">
+                                    Reducing Postpartum Belly Fat
+                                  </SelectItem>
+                                  <SelectItem value="strength-building">
+                                    Build Strength/Endurance/Flexibility
+                                  </SelectItem>
+                                  <SelectItem value="general-fitness">
+                                    General Fitness
+                                  </SelectItem>
                                 </SelectContent>
                               </Select>
                               <FormMessage />
@@ -2201,10 +2721,10 @@ export default function Home() {
                           )}
                         />
 
-                        <Button 
-                          type="submit" 
-                          size="lg" 
-                          className="w-full bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-bold shadow-lg" 
+                        <Button
+                          type="submit"
+                          size="lg"
+                          className="w-full bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-bold shadow-lg"
                           disabled={contactMutation.isPending}
                           data-testid="button-submit-form"
                         >
@@ -2233,29 +2753,41 @@ export default function Home() {
                         Business Hours
                       </h3>
                     </div>
-                    
+
                     <div className="space-y-3">
                       <div className="flex items-start gap-3 bg-white/10 rounded-lg p-3">
                         <Clock className="h-5 w-5 text-white/90 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-semibold text-white text-sm mb-0.5">Monday - Friday</p>
-                          <p className="text-white/80 text-sm">8:00 AM - 6:00 PM</p>
+                          <p className="font-semibold text-white text-sm mb-0.5">
+                            Monday - Friday
+                          </p>
+                          <p className="text-white/80 text-sm">
+                            8:00 AM - 6:00 PM
+                          </p>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-start gap-3 bg-white/10 rounded-lg p-3">
                         <Clock className="h-5 w-5 text-white/90 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-semibold text-white text-sm mb-0.5">Saturday</p>
-                          <p className="text-white/80 text-sm">9:00 AM - 4:00 PM</p>
+                          <p className="font-semibold text-white text-sm mb-0.5">
+                            Saturday
+                          </p>
+                          <p className="text-white/80 text-sm">
+                            9:00 AM - 4:00 PM
+                          </p>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-start gap-3 bg-white/10 rounded-lg p-3">
                         <Clock className="h-5 w-5 text-white/90 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-semibold text-white text-sm mb-0.5">Sunday</p>
-                          <p className="text-white/80 text-sm">Emergency Services Only</p>
+                          <p className="font-semibold text-white text-sm mb-0.5">
+                            Sunday
+                          </p>
+                          <p className="text-white/80 text-sm">
+                            Emergency Services Only
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -2274,7 +2806,7 @@ export default function Home() {
                       Contact Details
                     </h3>
                   </div>
-                  
+
                   <div className="space-y-3 flex flex-col flex-1">
                     {/* Phone Number */}
                     <div className="flex items-start gap-3 bg-brand-50 rounded-lg p-3 border border-primary/10">
@@ -2282,8 +2814,10 @@ export default function Home() {
                         <Phone className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground mb-0.5 text-sm">Phone</p>
-                        <a 
+                        <p className="font-semibold text-foreground mb-0.5 text-sm">
+                          Phone
+                        </p>
+                        <a
                           href={`tel:${PHONE_NUMBER}`}
                           className="text-muted-foreground hover:text-primary transition-colors text-sm"
                         >
@@ -2298,8 +2832,10 @@ export default function Home() {
                         <Mail className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground mb-0.5 text-sm">Email</p>
-                        <a 
+                        <p className="font-semibold text-foreground mb-0.5 text-sm">
+                          Email
+                        </p>
+                        <a
                           href="mailto:trainwithwinston@gmail.com"
                           className="text-muted-foreground hover:text-primary transition-colors text-sm"
                         >
@@ -2314,14 +2850,17 @@ export default function Home() {
                         <MapPin className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground mb-0.5 text-sm">Address</p>
-                        <a 
+                        <p className="font-semibold text-foreground mb-0.5 text-sm">
+                          Address
+                        </p>
+                        <a
                           href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-muted-foreground hover:text-primary transition-colors text-sm"
                         >
-                          Basement, Gangagodavari Apt, below Sundar Classes, Katemanivali, Naka, Kalyan, Maharashtra 421306
+                          Basement, Gangagodavari Apt, below Sundar Classes,
+                          Katemanivali, Naka, Kalyan, Maharashtra 421306
                         </a>
                       </div>
                     </div>
@@ -2332,29 +2871,31 @@ export default function Home() {
                         <Users className="h-4 w-4 text-white" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-semibold text-foreground mb-2 text-sm">Follow Us</p>
+                        <p className="font-semibold text-foreground mb-2 text-sm">
+                          Follow Us
+                        </p>
                         <div className="flex flex-wrap gap-2">
-                          <a 
-                            href="https://www.instagram.com/house_of_champions_studio/" 
-                            target="_blank" 
+                          <a
+                            href="https://www.instagram.com/house_of_champions_studio/"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="h-9 w-9 rounded-full flex items-center justify-center hover-elevate transition-all bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500"
                             data-testid="link-instagram-contact"
                           >
                             <SiInstagram className="h-4 w-4 text-white" />
                           </a>
-                          <a 
-                            href="https://www.facebook.com/house_of_champions_studio/" 
-                            target="_blank" 
+                          <a
+                            href="https://www.facebook.com/house_of_champions_studio/"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="h-9 w-9 rounded-full flex items-center justify-center hover-elevate transition-all bg-[#1877F2]"
                             data-testid="link-facebook-contact"
                           >
                             <SiFacebook className="h-4 w-4 text-white" />
                           </a>
-                          <a 
-                            href="https://www.youtube.com/@houseofchampions8926" 
-                            target="_blank" 
+                          <a
+                            href="https://www.youtube.com/@houseofchampions8926"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="h-9 w-9 rounded-full flex items-center justify-center hover-elevate transition-all bg-[#FF0000]"
                             data-testid="link-youtube-contact"
@@ -2383,14 +2924,17 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              </div>
             </div>
-          </section>
+          </div>
+        </section>
       </AnimatedSection>
 
       {/* Final CTA Section */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-10 md:py-12 lg:py-16 bg-primary relative overflow-hidden border-t border-primary/10" id="final-cta">
+        <section
+          className="py-10 md:py-12 lg:py-16 bg-primary relative overflow-hidden border-t border-primary/10"
+          id="final-cta"
+        >
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
           <div className="container px-4 md:px-6 relative max-w-4xl mx-auto text-center">
             <motion.div
@@ -2403,17 +2947,21 @@ export default function Home() {
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold text-white">
                 Start your transformation today.
               </h2>
-              
+
               <div className="flex flex-col items-center gap-6">
-                <Button 
-                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                <Button
+                  onClick={() =>
+                    document
+                      .getElementById("pricing")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   size="default"
                   className="rounded-full px-12 py-6 text-lg font-bold bg-white text-primary hover:bg-white/90 transition-all shadow-2xl shadow-black/20 hover:scale-105"
                   data-testid="button-join-now-final"
                 >
                   Join Now
                 </Button>
-                
+
                 <button
                   onClick={openWhatsApp}
                   className="text-white/90 hover:text-white transition-colors text-base md:text-lg font-medium flex items-center gap-2"
@@ -2450,10 +2998,12 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                 >
                   <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-foreground">
-                    Limited Time <span className="text-primary">Marketing Offer</span>
+                    Limited Time{" "}
+                    <span className="text-primary">Marketing Offer</span>
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8">
-                    Transform your fitness journey with our exclusive coaching packages
+                    Transform your fitness journey with our exclusive coaching
+                    packages
                   </p>
                 </motion.div>
               </div>
@@ -2473,31 +3023,47 @@ export default function Home() {
                   <div className="absolute -top-4 -right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                     30% OFF
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">Starter</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Perfect for beginners</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+                    Starter
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Perfect for beginners
+                  </p>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-extrabold text-primary">₹999</span>
-                      <span className="text-lg text-muted-foreground line-through">₹1,499</span>
-                      <span className="text-sm text-primary font-semibold">/month</span>
+                      <span className="text-3xl font-extrabold text-primary">
+                        ₹999
+                      </span>
+                      <span className="text-lg text-muted-foreground line-through">
+                        ₹1,499
+                      </span>
+                      <span className="text-sm text-primary font-semibold">
+                        /month
+                      </span>
                     </div>
-                    <p className="text-xs text-orange-600 font-semibold">Limited time only - Offer ends soon!</p>
+                    <p className="text-xs text-orange-600 font-semibold">
+                      Limited time only - Offer ends soon!
+                    </p>
                   </div>
                   <ul className="space-y-2 mb-8 text-sm">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">2 sessions per week</span>
+                      <span className="text-foreground">
+                        2 sessions per week
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Personalized workout plan</span>
+                      <span className="text-foreground">
+                        Personalized workout plan
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-foreground">Email support</span>
                     </li>
                   </ul>
-                  <Button 
+                  <Button
                     onClick={openWhatsApp}
                     className="w-full bg-primary hover:bg-primary/90 text-white font-bold rounded-lg"
                     data-testid="button-register-starter"
@@ -2518,15 +3084,27 @@ export default function Home() {
                   <div className="absolute -top-4 -right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                     50% OFF
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Pro</h3>
-                  <p className="text-sm text-white/80 mb-4">Recommended for all</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                    Pro
+                  </h3>
+                  <p className="text-sm text-white/80 mb-4">
+                    Recommended for all
+                  </p>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-extrabold text-white">₹1,999</span>
-                      <span className="text-lg text-white/70 line-through">₹3,999</span>
-                      <span className="text-sm text-white/90 font-semibold">/month</span>
+                      <span className="text-3xl font-extrabold text-white">
+                        ₹1,999
+                      </span>
+                      <span className="text-lg text-white/70 line-through">
+                        ₹3,999
+                      </span>
+                      <span className="text-sm text-white/90 font-semibold">
+                        /month
+                      </span>
                     </div>
-                    <p className="text-xs text-yellow-200 font-semibold">Huge discount - Offer expires soon!</p>
+                    <p className="text-xs text-yellow-200 font-semibold">
+                      Huge discount - Offer expires soon!
+                    </p>
                   </div>
                   <ul className="space-y-2 mb-8 text-sm">
                     <li className="flex items-start gap-2">
@@ -2546,7 +3124,7 @@ export default function Home() {
                       <span className="text-white">Progress tracking</span>
                     </li>
                   </ul>
-                  <Button 
+                  <Button
                     onClick={openWhatsApp}
                     className="w-full bg-white hover:bg-white/90 text-primary font-bold rounded-lg"
                     data-testid="button-register-pro"
@@ -2564,20 +3142,34 @@ export default function Home() {
                   <div className="absolute -top-4 -right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold">
                     40% OFF
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">Elite</h3>
-                  <p className="text-sm text-muted-foreground mb-4">For serious athletes</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+                    Elite
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    For serious athletes
+                  </p>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-extrabold text-primary">₹3,999</span>
-                      <span className="text-lg text-muted-foreground line-through">₹6,999</span>
-                      <span className="text-sm text-primary font-semibold">/month</span>
+                      <span className="text-3xl font-extrabold text-primary">
+                        ₹3,999
+                      </span>
+                      <span className="text-lg text-muted-foreground line-through">
+                        ₹6,999
+                      </span>
+                      <span className="text-sm text-primary font-semibold">
+                        /month
+                      </span>
                     </div>
-                    <p className="text-xs text-purple-600 font-semibold">Limited slots available!</p>
+                    <p className="text-xs text-purple-600 font-semibold">
+                      Limited slots available!
+                    </p>
                   </div>
                   <ul className="space-y-2 mb-8 text-sm">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Unlimited sessions</span>
+                      <span className="text-foreground">
+                        Unlimited sessions
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
@@ -2585,14 +3177,18 @@ export default function Home() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">Nutrition + supplement plan</span>
+                      <span className="text-foreground">
+                        Nutrition + supplement plan
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">VIP priority support</span>
+                      <span className="text-foreground">
+                        VIP priority support
+                      </span>
                     </li>
                   </ul>
-                  <Button 
+                  <Button
                     onClick={openWhatsApp}
                     className="w-full bg-primary hover:bg-primary/90 text-white font-bold rounded-lg"
                     data-testid="button-register-elite"
@@ -2609,10 +3205,12 @@ export default function Home() {
                 className="text-center mt-12"
               >
                 <p className="text-sm md:text-base text-muted-foreground mb-4">
-                  All packages include personalized guidance from our expert coaches
+                  All packages include personalized guidance from our expert
+                  coaches
                 </p>
                 <p className="text-xs text-orange-600 font-bold">
-                  These exclusive discounts are available for limited time. Don't miss out!
+                  These exclusive discounts are available for limited time.
+                  Don't miss out!
                 </p>
               </motion.div>
             </div>
@@ -2627,22 +3225,51 @@ export default function Home() {
             {/* Company Info */}
             <div className="space-y-4 lg:col-span-1">
               <div className="flex items-center gap-3">
-                <img src={hocLogo} alt="Train With Winston" className="h-32 w-auto" />
+                <img
+                  src={hocLogo}
+                  alt="Train With Winston"
+                  className="h-32 w-auto"
+                />
               </div>
               <p className="text-sm text-foreground leading-relaxed font-semibold">
-                Expert fitness coaching and personalized training programs to transform your life.
+                Expert fitness coaching and personalized training programs to
+                transform your life.
               </p>
               <div className="flex gap-3 pt-2">
-                <a href="https://www.facebook.com/profile.php?id=100063565829026" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-lg bg-[#1877F2] flex items-center justify-center transition-transform hover:scale-110" data-testid="link-facebook">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063565829026"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover-elevate h-10 w-10 rounded-lg bg-[#1877F2] flex items-center justify-center transition-transform hover:scale-110"
+                  data-testid="link-facebook"
+                >
                   <SiFacebook className="h-5 w-5 text-white" />
                 </a>
-                <a href="https://www.instagram.com/house_of_champions_studio/" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-lg bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] flex items-center justify-center transition-transform hover:scale-110" data-testid="link-instagram">
+                <a
+                  href="https://www.instagram.com/house_of_champions_studio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover-elevate h-10 w-10 rounded-lg bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] flex items-center justify-center transition-transform hover:scale-110"
+                  data-testid="link-instagram"
+                >
                   <SiInstagram className="h-5 w-5 text-white" />
                 </a>
-                <a href="https://www.youtube.com/@houseofchampions8926" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-lg bg-[#FF0000] flex items-center justify-center transition-transform hover:scale-110" data-testid="link-youtube">
+                <a
+                  href="https://www.youtube.com/@houseofchampions8926"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover-elevate h-10 w-10 rounded-lg bg-[#FF0000] flex items-center justify-center transition-transform hover:scale-110"
+                  data-testid="link-youtube"
+                >
                   <SiYoutube className="h-5 w-5 text-white" />
                 </a>
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-lg bg-[#25D366] flex items-center justify-center transition-transform hover:scale-110" data-testid="link-whatsapp">
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover-elevate h-10 w-10 rounded-lg bg-[#25D366] flex items-center justify-center transition-transform hover:scale-110"
+                  data-testid="link-whatsapp"
+                >
                   <SiWhatsapp className="h-5 w-5 text-white" />
                 </a>
               </div>
@@ -2650,40 +3277,86 @@ export default function Home() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-heading text-base font-bold mb-4 text-foreground">Quick Links</h3>
+              <h3 className="font-heading text-base font-bold mb-4 text-foreground">
+                Quick Links
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Home
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("about")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     About Us
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById('instagram-videos')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("instagram-videos")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Community
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("transformations")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Transformations
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("trainers")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Trainers
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.querySelector('[data-testid="section-testimonials"]')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .querySelector('[data-testid="section-testimonials"]')
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Testimonials
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => setShowMarketingModal(true)} className="text-primary hover:text-primary/80 font-semibold transition-colors" data-testid="button-marketing-footer">
+                  <button
+                    onClick={() => setShowMarketingModal(true)}
+                    className="text-primary hover:text-primary/80 font-semibold transition-colors"
+                    data-testid="button-marketing-footer"
+                  >
                     Marketing
                   </button>
                 </li>
@@ -2692,7 +3365,9 @@ export default function Home() {
 
             {/* Services */}
             <div>
-              <h3 className="font-heading text-base font-bold mb-4 text-foreground">Our Services</h3>
+              <h3 className="font-heading text-base font-bold mb-4 text-foreground">
+                Our Services
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li className="text-muted-foreground">HIIT Training</li>
                 <li className="text-muted-foreground">Yoga & Meditation</li>
@@ -2706,20 +3381,43 @@ export default function Home() {
 
             {/* Packages */}
             <div>
-              <h3 className="font-heading text-base font-bold mb-4 text-foreground">Packages</h3>
+              <h3 className="font-heading text-base font-bold mb-4 text-foreground">
+                Packages
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Monthly Plans
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Quarterly Plans
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Annual Plans
                   </button>
                 </li>
@@ -2729,12 +3427,26 @@ export default function Home() {
                   </button>
                 </li> */}
                 <li>
-                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Personal Training
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Group Classes
                   </button>
                 </li>
@@ -2743,24 +3455,27 @@ export default function Home() {
 
             {/* Get In Touch */}
             <div>
-              <h3 className="font-heading text-base font-bold mb-4 text-foreground">Get In Touch</h3>
+              <h3 className="font-heading text-base font-bold mb-4 text-foreground">
+                Get In Touch
+              </h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <a 
+                  <a
                     href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    Basement, Gangagodavari Apt, Katemanivali, Naka, Kalyan, Maharashtra 421306
+                    Basement, Gangagodavari Apt, Katemanivali, Naka, Kalyan,
+                    Maharashtra 421306
                   </a>
                 </li>
                 <li className="flex items-start gap-2">
                   <Phone className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <a 
+                  <a
                     href={`tel:${PHONE_NUMBER}`}
-                    className="text-muted-foreground hover:text-primary transition-colors" 
+                    className="text-muted-foreground hover:text-primary transition-colors"
                     data-testid="button-phone"
                   >
                     +91 89280 00407
@@ -2768,7 +3483,11 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <a href="mailto:trainwithwinston@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
+                  <a
+                    href="mailto:trainwithwinston@gmail.com"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    data-testid="link-email"
+                  >
                     trainwithwinston@gmail.com
                   </a>
                 </li>
@@ -2780,23 +3499,40 @@ export default function Home() {
           <div className="mt-12 pt-8 border-t">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
               <div className="flex flex-col items-center md:items-start gap-1">
-                <p>Copyright © 2025 House of Champions Fitness. All Rights Reserved</p>
+                <p>
+                  Copyright © 2025 House of Champions Fitness. All Rights
+                  Reserved
+                </p>
                 <p className="text-xs opacity-80">
-                  Developed by <a href="https://www.airavatatechnologies.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary font-semibold transition-colors">AIRAVATA TECHNOLOGIES</a>
+                  Developed by{" "}
+                  <a
+                    href="https://www.airavatatechnologies.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary font-semibold transition-colors"
+                  >
+                    AIRAVATA TECHNOLOGIES
+                  </a>
                 </p>
               </div>
               <div className="flex gap-6">
-                <a 
+                <a
                   href="/"
-                  onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                   className="hover:text-primary transition-colors"
                   data-testid="link-privacy-policy"
                 >
                   Privacy Policy
                 </a>
-                <a 
+                <a
                   href="/"
-                  onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                   className="hover:text-primary transition-colors"
                   data-testid="link-terms-of-service"
                 >
@@ -2825,7 +3561,7 @@ export default function Home() {
                 <SiWhatsapp className="h-5 w-5 text-primary" />
                 <span className="font-semibold text-foreground">WhatsApp</span>
               </button>
-              
+
               <button
                 onClick={() => {
                   window.location.href = `tel:${PHONE_NUMBER}`;
@@ -2839,7 +3575,7 @@ export default function Home() {
               </button>
             </div>
           )}
-          
+
           {/* Floating Button */}
           <button
             onClick={() => setContactMenuOpen(!contactMenuOpen)}
@@ -2855,7 +3591,7 @@ export default function Home() {
       {/* Scroll to Top Button - Bottom Left - Only visible after scrolling past 2nd page */}
       {showScrollTop && (
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="fixed bottom-24 left-6 md:left-8 z-40 w-12 h-12 bg-white border-2 border-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl hover:shadow-primary/20 hover:bg-primary hover:border-primary transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 group"
           aria-label="Scroll to top"
           data-testid="button-scroll-to-top"
