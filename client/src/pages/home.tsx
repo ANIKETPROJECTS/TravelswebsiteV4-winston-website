@@ -2779,7 +2779,12 @@ export default function Home() {
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-              <p>Copyright © 2025 House of Champions Fitness. All Rights Reserved</p>
+              <div className="flex flex-col items-center md:items-start gap-1">
+                <p>Copyright © 2025 House of Champions Fitness. All Rights Reserved</p>
+                <p className="text-xs opacity-80">
+                  Developed by <a href="https://www.airavatatechnologies.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary font-semibold transition-colors">AIRAVATA TECHNOLOGIES</a>
+                </p>
+              </div>
               <div className="flex gap-6">
                 <a 
                   href="/"
