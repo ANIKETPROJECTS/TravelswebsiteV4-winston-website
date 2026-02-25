@@ -1679,55 +1679,54 @@ export default function Home() {
               </motion.p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
-              {[
-                {
-                  name: "Snata Pattnaik",
-                  role: "Founder & Managing Director",
-                  image: trainer1Image,
-                  bio: "10 years of experience inspiring, training, and transforming people across Delhi NCR, Bangalore, Mumbai, and Kolkata."
-                },
-                {
-                  name: "Neha Kashyap",
-                  role: "Zumba & Dance Trainer",
-                  image: trainer2Image,
-                  bio: "10+ years Zumba trainer with Shiamak Davar Institute training. Certified yoga and dance fitness trainer."
-                },
-                {
-                  name: "Manisha",
-                  role: "Strength & Weight Loss Specialist",
-                  image: trainer3Image,
-                  bio: "Passionate about health and helping people achieve their fitness goals through strength training and weight loss programs."
-                },
-              ].map((trainer, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex flex-col"
-                >
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-md border-2 border-primary mb-4 group">
-                    <img 
-                      src={trainer.image} 
-                      alt={trainer.name} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="text-center space-y-2">
-                    <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">
-                      {trainer.name}
-                    </h3>
-                    <p className="text-primary text-sm md:text-base font-bold">
-                      {trainer.role}
-                    </p>
-                    <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
-                      {trainer.bio}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-primary shadow-2xl"
+              >
+                <video 
+                  src="/trainer_video_1.mp4" 
+                  className="w-full h-full object-cover"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="relative aspect-[3/4] overflow-hidden rounded-xl border-4 border-primary shadow-2xl z-10 scale-110"
+              >
+                <img 
+                  src="/trainer_photo.jpg" 
+                  alt="Trainer Winston" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-primary shadow-2xl"
+              >
+                <video 
+                  src="/trainer_video_2.mp4" 
+                  className="w-full h-full object-cover"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                />
+              </motion.div>
             </div>
           </div>
         </section>
