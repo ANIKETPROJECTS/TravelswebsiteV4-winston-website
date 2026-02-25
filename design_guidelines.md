@@ -1,7 +1,7 @@
-# Design Guidelines: Bliss & Burn Fitness Training Website
+# Design Guidelines: Train With Winston Fitness Training Website
 
 ## Design Approach
-**Reference-Based Approach**: Drawing inspiration from fitness industry leaders including the provided Bliss & Burn reference, Peloton, ClassPass, and modern wellness platforms. The design prioritizes emotional engagement, trust-building through social proof, and conversion-focused layouts typical of fitness/wellness landing pages.
+**Reference-Based Approach**: Drawing inspiration from fitness industry leaders, Peloton, ClassPass, and modern wellness platforms. The design prioritizes emotional engagement, trust-building through social proof, and conversion-focused layouts typical of fitness/wellness landing pages.
 
 ## Core Design Principles
 - **Empowering & Energetic**: Visual hierarchy that inspires action and transformation
