@@ -68,9 +68,9 @@ import transform5 from "@assets/image_1762684436027.png";
 import transform6 from "@assets/image_1762684459075.png";
 import transform7 from "@assets/image_1762684473690.png";
 import transform8 from "@assets/image_1762684488005.png";
-import trainer1Image from "@/assets/trainers/trainer1.png";
-import trainer2Image from "@/assets/trainers/trainer2.png";
-import trainer3Image from "@/assets/trainers/trainer3.png";
+import trainerPhoto from "@assets/639759052_18572828035042809_4353271989920714852_n_1772031616756.jpg";
+import trainerVideo1 from "@assets/Video-278_1772031750637.mp4";
+import trainerVideo2 from "@assets/Video-692_1772031780392.mp4";
 import cardioTrainingImage from "@assets/image_1762682663589.png";
 import strengthTrainingImage from "@assets/image_1762682353257.png";
 import flexibilityTrainingImage from "@assets/image_1762682466178.png";
@@ -1688,7 +1688,7 @@ export default function Home() {
                 className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-primary shadow-2xl"
               >
                 <video 
-                  src="/trainer_video_1.mp4" 
+                  src={trainerVideo1} 
                   className="w-full h-full object-cover"
                   autoPlay 
                   loop 
@@ -1705,7 +1705,7 @@ export default function Home() {
                 className="relative aspect-[3/4] overflow-hidden rounded-xl border-4 border-primary shadow-2xl z-10 scale-110"
               >
                 <img 
-                  src="/trainer_photo.jpg" 
+                  src={trainerPhoto} 
                   alt="Trainer Winston" 
                   className="w-full h-full object-cover"
                 />
@@ -1719,7 +1719,7 @@ export default function Home() {
                 className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-primary shadow-2xl"
               >
                 <video 
-                  src="/trainer_video_2.mp4" 
+                  src={trainerVideo2} 
                   className="w-full h-full object-cover"
                   autoPlay 
                   loop 
